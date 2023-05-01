@@ -1,5 +1,16 @@
 {
   "dependencies": {
     "bootstrap": "^5.2.3"
-  }
+  },
+  "name": "subasta",
+  "description": "Subasta is an online auction house. This is my semester project 2 as a Front-end development student at Noroff.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
