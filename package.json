@@ -5,6 +5,8 @@
   "main": "index.js",
   "devDependencies": {
     "eslint": "^8.39.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
     "live-server": "^1.1.0",
     "prettier": "^2.8.8",
     "sass": "^1.62.1"
@@ -15,7 +17,8 @@
     "build": "sass src/scss:dist",
     "watch": "sass --watch src/scss:dist/css & live-server",
     "lint": "eslint src/**/*.js",
-    "lint-fix": "eslint src/**/*.js --cache --fix"
+    "lint-fix": "eslint src/**/*.js --cache --fix",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
@@ -24,5 +27,17 @@
     "bootstrap": "^5.2.3",
     "chokidar": "^3.5.3",
     "glob-parent": "^5.1.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.html": [
+      "prettier --write"
+    ],
+    "*.scss": [
+      "prettier --write"
+    ]
   }
 }
