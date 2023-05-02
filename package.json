@@ -1,7 +1,7 @@
 {
   "name": "subasta",
   "description": "Subasta is an online auction house. This is my semester project 2 as a Front-end development student at Noroff.",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "main": "index.js",
   "devDependencies": {
     "eslint": "^8.39.0",
