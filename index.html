@@ -1,18 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Subasta</title>
-    <meta name="description" content="Subasta is an online auction house. Subasta is a from Cebuano word which means Auction.Cebuano is one one of the dialects in the Philipppines.">
-    <link rel="stylesheet" href="dist/css/styles.css">
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
-</head>
-<body>
+    <meta
+      name="description"
+      content="Subasta is an online auction house. Subasta is a from Cebuano word which means Auction.Cebuano is one one of the dialects in the Philipppines."
+    />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+  </head>
+  <body>
     <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#"
+            ><img src="assets/img/Logo.png" alt="Subasta logo"
+          /></a>
+          <form class="search d-flex" role="search">
+            <input
+              class="form-control border-secondary"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn search-icon p-0" type="submit">
+              <img src="assets/icon/search-icon.png" alt="search icon" />
+            </button>
+          </form>
+          <button
+            class="navbar-toggler border border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <img src="assets/icon/navbar-icon.png" alt="nav icon" />
+          </button>
+          <div
+            class="offcanvas offcanvas-end rounded-start border border-info"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header justify-content-end">
+              <button
+                type="button"
+                class="fw-bold text-info border rounded-circle border-info"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                X
+              </button>
+            </div>
+            <div class="offcanvas-body">
+              <ul
+                class="navbar-nav nav-justified gap-2 justify-content-between flex-grow-1 pe-3 nav-pills ms-2 flex-lg-row-reverse"
+              >
+                <li class="nav-item d-none">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    aria-current="page"
+                    href="#"
+                    >My Profile</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    aria-current="page"
+                    href="#"
+                    >Listing</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    href="#"
+                    >About Us</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    href="#"
+                    >Login</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    >Sign Up</a
+                  >
+                </li>
+                <li class="nav-item d-none">
+                  <a
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    aria-current="page"
+                    href="#"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
     </header>
-    <main></main>
-    <footer></footer>
-</body>
+    <main>
+      <div style="height: 90vh"></div>
+    </main>
+    <footer>
+      <div
+        class="container-fluid fw-bold text-success bg-primary text-center p-3"
+      >
+        All Rights Reserved.
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'Arial-Rounded';
+  src: url('assets/font/ARLRDBD.TTF') format('TTF');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('assets/font/Roboto-Regular.TTF') format('TTF');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$primary-color: #c8ffcb;
+$secondary-color: #1afffd;
+$success-color: #740414;
+$info-color: #7400b1;
+$warning-color: #ffea06;
+$theme-colors: (
+  'primary': $primary-color,
+  'secondary': $secondary-color,
+  'success': $success-color,
+  'info': $info-color,
+  'warning': $warning-color,
+);
+
+$border-radius: 1.375rem;
+:root {
+  --bs-border-radius: #{$border-radius};
+}
