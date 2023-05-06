@@ -14,6 +14,7 @@
       src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
       defer
     ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
   </head>
   <body>
     <header>
@@ -63,48 +64,57 @@
                 class="navbar-nav nav-justified gap-2 justify-content-between flex-grow-1 pe-3 nav-pills ms-2 flex-lg-row-reverse"
               >
                 <li class="nav-item d-none">
-                  <a
+                  <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     aria-current="page"
                     href="#"
-                    >My Profile</a
                   >
+                    My Profile
+                  </button>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     aria-current="page"
                     href="#"
-                    >Listing</a
                   >
+                    Listing
+                  </button>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     href="#"
-                    >About Us</a
                   >
+                    About Us
+                  </button>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     href="#"
-                    >Login</a
                   >
+                    Login
+                  </button>
                 </li>
                 <li class="nav-item">
-                  <a
+                  <button
+                    type="button"
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
-                    >Sign Up</a
+                    data-bs-toggle="modal"
+                    data-bs-target="#signup-modal"
                   >
+                    Sign Up
+                  </button>
                 </li>
                 <li class="nav-item d-none">
-                  <a
+                  <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     aria-current="page"
                     href="#"
-                    >Logout</a
                   >
+                    Logout
+                  </button>
                 </li>
               </ul>
             </div>
@@ -114,6 +124,110 @@
     </header>
     <main>
       <div style="height: 90vh"></div>
+
+      <!--Registration Modal-->
+      <div
+        class="modal fade"
+        id="signup-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="signup-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content border-secondary">
+            <div class="modal-header border-0 justify-content-end">
+              <button
+                type="button"
+                class="fw-bold text-info border rounded-circle border-info"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              >
+                X
+              </button>
+            </div>
+            <div class="modal-body registration-form">
+              <div class="d-flex flex-column mb-4">
+                <img
+                  class="align-self-center"
+                  src="assets/img/Logo-sign.png"
+                  alt="Logo Sign"
+                />
+              </div>
+              <form class="mt-5">
+                <div class="mb-5 position-relative">
+                  <label
+                    for="name"
+                    class="form-label bg-white h4 text-success p-1 position-absolute"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control form-control-lg border border-3 border-primary p-3"
+                    id="name"
+                  />
+                </div>
+                <div class="mb-5 position-relative">
+                  <label
+                    for="avatar"
+                    class="form-label bg-white h4 text-success p-1 position-absolute"
+                    >Avatar</label
+                  >
+                  <input
+                    type="url"
+                    class="form-control form-control-lg border border-3 border-primary p-3"
+                    id="avatar"
+                  />
+                </div>
+                <div class="mb-5 position-relative">
+                  <label
+                    for="email"
+                    class="form-label bg-white h4 text-success p-1 position-absolute"
+                    >Email address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control form-control-lg border border-3 border-primary p-3"
+                    id="email"
+                  />
+                </div>
+                <div class="mb-5 position-relative">
+                  <label
+                    for="password"
+                    class="form-label bg-white h4 text-success p-1 position-absolute"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control form-control-lg border border-3 border-primary p-3"
+                    id="password"
+                  />
+                </div>
+                <div class="d-flex flex-column">
+                  <button
+                    type="submit"
+                    class="btn btn-secondary align-self-end btn-lg fw-bold fs-5"
+                  >
+                    Sign Up
+                  </button>
+                </div>
+              </form>
+              <div
+                class="login-btn mt-3 d-flex align-items-center justify-content-between"
+              >
+                <h5 class="m-0 text-success">Already Registered?</h5>
+                <button
+                  type="submit"
+                  class="btn btn-secondary align-self-end btn-lg fw-bold fs-5"
+                >
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
     <footer>
       <div
