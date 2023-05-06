@@ -44,6 +44,25 @@ body {
   }
 }
 
+.registration-form {
+  .form-label {
+    left: 10px;
+    top: -20px;
+  }
+  .form-control {
+    border-radius: 0%;
+  }
+  .btn {
+    @extend .form-control;
+    width: 100px;
+    background-color: $secondary-color;
+    color: $success-color;
+  }
+  .login-btn .btn {
+    @extend .btn;
+  }
+}
+
 @include media-breakpoint-down(lg) {
   .offcanvas {
     max-width: 300px;
