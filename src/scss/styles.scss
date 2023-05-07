@@ -61,6 +61,11 @@ body {
   .login-btn .btn {
     @extend .btn;
   }
+  .was-validated .btn:valid {
+    background-image: none;
+    padding-right: 12px;
+    border: none;
+  }
 }
 
 @include media-breakpoint-down(lg) {
