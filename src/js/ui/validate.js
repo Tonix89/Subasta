@@ -1,4 +1,4 @@
-import { goSignup } from '../api/signup.js';
+import { goSignup } from '../forms/signup.js';
 
 export const forms = () => {
   (() => {
