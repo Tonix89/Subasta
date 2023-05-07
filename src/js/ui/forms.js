@@ -1,4 +1,6 @@
-export const signup = () => {
+import { goSignup } from '../api/signup.js';
+
+export const forms = () => {
   (() => {
     'use strict';
 
@@ -13,7 +15,13 @@ export const signup = () => {
             event.preventDefault();
             event.stopPropagation();
           } else {
-            console.log(form);
+            switch (form.id) {
+              case 'sign-up':
+                goSignup(form);
+                break;
+              default:
+                break;
+            }
           }
           form.classList.add('was-validated');
         },

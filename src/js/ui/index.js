@@ -1,5 +1,5 @@
-import { signup } from './signup.js';
+import { forms } from './forms.js';
 
 export default () => {
-  signup();
+  forms();
 };
