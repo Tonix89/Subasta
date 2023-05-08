@@ -63,7 +63,7 @@
               <ul
                 class="navbar-nav nav-justified gap-2 justify-content-between flex-grow-1 pe-3 nav-pills ms-2 flex-lg-row-reverse"
               >
-                <li class="nav-item d-none">
+                <li class="nav-item d-none loggedin">
                   <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
                     aria-current="page"
@@ -89,7 +89,7 @@
                     About Us
                   </button>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item not-login">
                   <button
                     type="button"
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
@@ -99,7 +99,7 @@
                     Login
                   </button>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item not-login">
                   <button
                     type="button"
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
@@ -109,9 +109,10 @@
                     Sign Up
                   </button>
                 </li>
-                <li class="nav-item d-none">
+                <li class="nav-item d-none loggedin">
                   <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    id="logout-btn"
                     aria-current="page"
                     href="#"
                   >

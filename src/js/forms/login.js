@@ -28,8 +28,10 @@ export async function goLogin(form) {
   const regUrl = url + '/auction/auth/login';
   postApi(bodyData, regUrl).then((loginRes) => {
     if (loginRes) {
+      //   console.log(loginRes);
       localStorage.setItem('subToken', loginRes.accessToken);
-      location.href = location.href + '?user=' + loginRes.name;
+      localStorage.setItem('subUser', loginRes.name);
+      location.reload();
     }
   });
 }

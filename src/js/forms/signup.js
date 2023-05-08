@@ -45,7 +45,8 @@ export async function goSignup(form) {
       postApi(loginData, loginUrl).then((loginRes) => {
         if (loginRes) {
           localStorage.setItem('subToken', loginRes.accessToken);
-          location.href = location.href + '?user=' + name;
+          localStorage.setItem('subUser', loginRes.name);
+          location.reload();
         }
       });
     }
