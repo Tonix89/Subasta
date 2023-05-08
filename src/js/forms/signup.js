@@ -13,25 +13,40 @@ export async function goSignup(form) {
   //   console.log(inputValue);
 
   const [name, avatar, email, password] = inputValue;
-  console.log(name, avatar, email, password);
+  //   console.log(name, avatar, email, password);
 
-  const regData = {
-    name: name,
-    email: email,
-    password: password,
-    avatar: avatar,
+  const bodyData = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      password: password,
+      avatar: avatar,
+    }),
   };
+
   const regUrl = url + '/auction/auth/register';
-  postApi(regData, regUrl).then((regRes) => {
+  postApi(bodyData, regUrl).then((regRes) => {
     if (regRes) {
       const loginUrl = url + '/auction/auth/login';
       const loginData = {
-        email: email,
-        password: password,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
       };
       postApi(loginData, loginUrl).then((loginRes) => {
-        localStorage.setItem('subToken', loginRes.accessToken);
-        location.href = location.href + '?user=' + name;
+        if (loginRes) {
+          localStorage.setItem('subToken', loginRes.accessToken);
+          location.href = location.href + '?user=' + name;
+        }
       });
     }
   });

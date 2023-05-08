@@ -1,4 +1,5 @@
 import { goSignup } from '../forms/signup.js';
+import { goLogin } from '../forms/login.js';
 
 export const forms = () => {
   (() => {
@@ -18,6 +19,9 @@ export const forms = () => {
             switch (form.id) {
               case 'sign-up':
                 goSignup(form);
+                break;
+              case 'login':
+                goLogin(form);
                 break;
               default:
                 break;
