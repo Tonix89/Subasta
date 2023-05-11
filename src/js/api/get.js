@@ -5,7 +5,7 @@ export async function getApi(url) {
     if (res.ok) {
       return resData;
     } else {
-      console.log(resData);
+      // console.log(resData);
       alert(resData.errors[0].message);
     }
   } catch (error) {
