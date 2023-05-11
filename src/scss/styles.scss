@@ -7,19 +7,6 @@ body {
     sans-serif;
 }
 
-.bg-primary {
-  background-color: $primary-color;
-}
-.border-secondary {
-  border-color: $secondary-color;
-}
-.border-info {
-  border-color: $info-color;
-}
-.text-success {
-  color: $success-color;
-}
-
 .search {
   position: relative;
   width: 40%;
@@ -69,6 +56,47 @@ body {
   }
 }
 
+#home-page {
+  width: 75vw;
+  #listing-carousel {
+    min-height: 85vh;
+    .carousel-inner {
+      .carousel-item {
+        .list-img {
+          height: 50vh;
+          width: 75vw;
+        }
+        .list-desc {
+          text-indent: 50px;
+        }
+        .user-avatar {
+          width: 50px;
+          height: 50px;
+        }
+        .timer-icon {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .carousel-control-prev {
+      height: 50vh;
+      .carousel-control-prev-icon {
+        filter: invert(65%) sepia(100%) hue-rotate(300deg) saturate(600%);
+      }
+    }
+    .carousel-control-next {
+      height: 50vh;
+      .carousel-control-next-icon {
+        filter: invert(65%) sepia(100%) hue-rotate(300deg) saturate(600%);
+      }
+    }
+    .bid-his-cont {
+      min-height: 200px;
+    }
+  }
+}
+
 @include media-breakpoint-down(lg) {
   .offcanvas {
     max-width: 300px;
@@ -79,5 +107,24 @@ body {
 @include media-breakpoint-down(md) {
   .search {
     width: 50%;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  #home-page {
+    width: 95vw;
+    #listing-carousel {
+      .carousel-inner {
+        .carousel-item {
+          .list-img {
+            width: 100vw;
+          }
+          .user-avatar {
+            width: 30px;
+            height: 30px;
+          }
+        }
+      }
+    }
   }
 }
