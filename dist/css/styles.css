@@ -10741,6 +10741,16 @@ main {
 #profile-page {
   width: 75vw;
 }
+#profile-page #profile-cont {
+  width: 50vw;
+}
+#profile-page #profile-cont .avatar {
+  width: 70px;
+  height: 70px;
+}
+#profile-page .list-win {
+  width: 200px;
+}
 
 @media (max-width: 991.98px) {
   .offcanvas {
@@ -10766,6 +10776,12 @@ main {
   }
   #profile-page {
     width: 95vw;
+  }
+  #profile-page #profile-cont {
+    width: 100%;
+  }
+  #profile-page .list-win {
+    width: 150px;
   }
 }
 

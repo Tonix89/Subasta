@@ -2,13 +2,15 @@ import { url } from '../api/baseurl.js';
 import { getApi } from '../api/get.js';
 import { countDown } from '../functions/count-down.js';
 import { homePageTemp } from '../template/homepage.js';
+import { secondaryLoader } from '../variables/loader.js';
 
 export function homeDisplay() {
   homePageTemp();
+  const carouselCont = document.querySelector('.carousel-inner');
+  carouselCont.innerHTML = secondaryLoader;
   const getUrl = url + '/auction/listings?_seller=true&_bids=true&_active=true';
   getApi(getUrl).then((data) => {
-    const carouselCont = document.querySelector('.carousel-inner');
-
+    carouselCont.innerHTML = '';
     data.forEach((listing) => {
       // console.log(listing);
       const { id, title, description, media, seller, bids, endsAt } = listing;
