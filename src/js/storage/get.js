@@ -1,4 +1,4 @@
-export const auth = (key) => {
+export const getStorage = (key) => {
   try {
     return localStorage.getItem(key);
   } catch {
