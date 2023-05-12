@@ -1,8 +1,10 @@
 import { url } from '../api/baseurl.js';
 import { getApi } from '../api/get.js';
 import { countDown } from '../functions/count-down.js';
+import { homePageTemp } from '../template/homepage.js';
 
 export function homeDisplay() {
+  homePageTemp();
   const getUrl = url + '/auction/listings?_seller=true&_bids=true&_active=true';
   getApi(getUrl).then((data) => {
     const carouselCont = document.querySelector('.carousel-inner');

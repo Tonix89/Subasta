@@ -10700,11 +10700,12 @@ body {
   border: none;
 }
 
+main {
+  min-height: 85vh;
+}
+
 #home-page {
   width: 75vw;
-}
-#home-page #listing-carousel {
-  min-height: 85vh;
 }
 #home-page #listing-carousel .carousel-inner .carousel-item .list-img {
   height: 50vh;
@@ -10737,6 +10738,10 @@ body {
   min-height: 200px;
 }
 
+#profile-page {
+  width: 75vw;
+}
+
 @media (max-width: 991.98px) {
   .offcanvas {
     max-width: 300px;
@@ -10758,6 +10763,9 @@ body {
   #home-page #listing-carousel .carousel-inner .carousel-item .user-avatar {
     width: 30px;
     height: 30px;
+  }
+  #profile-page {
+    width: 95vw;
   }
 }
 

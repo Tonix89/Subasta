@@ -20,7 +20,7 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="index.html"
             ><img src="assets/img/Logo.png" alt="Subasta logo"
           /></a>
           <form class="search d-flex" role="search">
@@ -66,10 +66,10 @@
                 <li class="nav-item d-none loggedin">
                   <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
-                    aria-current="page"
-                    href="#"
+                    id="profile-nav-btn"
+                    data-bs-dismiss="offcanvas"
                   >
-                    My Profile
+                    Profile
                   </button>
                 </li>
                 <li class="nav-item">
@@ -348,29 +348,13 @@
       </div>
 
       <!--Home Page Template-->
-      <div id="home-page" class="mt-3">
-        <div id="listing-carousel" class="carousel slide" data-bs-ride="true">
-          <div class="carousel-inner d-flex align-items-center"></div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#listing-carousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#listing-carousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
+      <div id="home-page" class="mt-3"></div>
+
+      <!--Profile Page-->
+      <div
+        id="profile-page"
+        class="d-none mt-3 d-flex flex-column align-items-center"
+      ></div>
     </main>
     <footer>
       <div

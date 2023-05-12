@@ -56,10 +56,13 @@ body {
   }
 }
 
+main {
+  min-height: 85vh;
+}
+
 #home-page {
   width: 75vw;
   #listing-carousel {
-    min-height: 85vh;
     .carousel-inner {
       .carousel-item {
         .list-img {
@@ -97,6 +100,10 @@ body {
   }
 }
 
+#profile-page {
+  width: 75vw;
+}
+
 @include media-breakpoint-down(lg) {
   .offcanvas {
     max-width: 300px;
@@ -126,5 +133,9 @@ body {
         }
       }
     }
+  }
+
+  #profile-page {
+    width: 95vw;
   }
 }
