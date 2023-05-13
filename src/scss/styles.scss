@@ -32,7 +32,8 @@ body {
 }
 
 .registration-form,
-.login-form {
+.login-form,
+#change-avatar {
   .form-label {
     left: 10px;
     top: -20px;
@@ -56,6 +57,11 @@ body {
   }
 }
 
+#change-avatar {
+  .btn {
+    width: 200px;
+  }
+}
 main {
   min-height: 85vh;
 }

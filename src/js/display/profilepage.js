@@ -16,7 +16,7 @@ export function profilePageDisplay() {
     // console.log(data);
     const { name, email, avatar, credits, wins, _count } = data;
     profileCont.innerHTML = `<div class="container-fluid text-center m-2">
-                            <img src="${avatar}" alt="profile avatar" class="mb-2 avatar border border-secondary rounded-circle"/>
+                            <img src="${avatar}" id="profilePage-avatar" alt="profile avatar" class="mb-2 avatar border border-secondary rounded-circle"/>
                             <h3>${name}</h3>
                             <div class="text-start">
                                 <h5 class="fw-bold">Email : ${email}</h5>
@@ -24,7 +24,8 @@ export function profilePageDisplay() {
                                 <h5 class="fw-bold">Listing : <span class="text-secondary">${_count.listings}</span></h5>
                                 <h5 class="fw-bold">Wins : <span class="text-secondary">${wins.length}</span></h5>
                             </div>
-                            <button type="button" class="btn btn-light border border-secondary rounded w-75 fw-bold fs-3 text-success">Edit Avatar</button>
+                            <button type="button" class="btn btn-light border border-secondary rounded w-75 fw-bold fs-3 text-success" data-bs-toggle="modal"
+                            data-bs-target="#edit-avatar-modal">Edit Avatar</button>
     </div>`;
   });
 }

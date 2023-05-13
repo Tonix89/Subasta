@@ -1,7 +1,8 @@
 import { goSignup } from '../forms/signup.js';
 import { goLogin } from '../forms/login.js';
+import { goChangeAvatar } from '../forms/change-avatar.js';
 
-export const forms = () => {
+export function validateForm() {
   (() => {
     'use strict';
 
@@ -23,6 +24,9 @@ export const forms = () => {
               case 'login':
                 goLogin(form);
                 break;
+              case 'change-avatar':
+                goChangeAvatar(form);
+                break;
               default:
                 break;
             }
@@ -33,4 +37,4 @@ export const forms = () => {
       );
     });
   })();
-};
+}

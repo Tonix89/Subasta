@@ -1997,7 +1997,8 @@ progress {
 
 .form-control, .registration-form .btn, .registration-form .login-btn .btn,
 .login-form .btn,
-.login-form .login-btn .btn {
+.login-form .login-btn .btn,
+#change-avatar .btn {
   display: block;
   width: 100%;
   padding: 0.375rem 0.75rem;
@@ -2015,20 +2016,24 @@ progress {
 @media (prefers-reduced-motion: reduce) {
   .form-control, .registration-form .btn, .registration-form .login-btn .btn,
   .login-form .btn,
-  .login-form .login-btn .btn {
+  .login-form .login-btn .btn,
+  #change-avatar .btn {
     transition: none;
   }
 }
 .form-control[type=file], .registration-form [type=file].btn,
-.login-form [type=file].btn {
+.login-form [type=file].btn,
+#change-avatar [type=file].btn {
   overflow: hidden;
 }
 .form-control[type=file]:not(:disabled):not([readonly]), .registration-form [type=file].btn:not(:disabled):not([readonly]),
-.login-form [type=file].btn:not(:disabled):not([readonly]) {
+.login-form [type=file].btn:not(:disabled):not([readonly]),
+#change-avatar [type=file].btn:not(:disabled):not([readonly]) {
   cursor: pointer;
 }
 .form-control:focus, .registration-form .btn:focus,
-.login-form .btn:focus {
+.login-form .btn:focus,
+#change-avatar .btn:focus {
   color: #212529;
   background-color: #fff;
   border-color: #86b7fe;
@@ -2037,23 +2042,27 @@ progress {
 }
 .form-control::-webkit-date-and-time-value, .registration-form .btn::-webkit-date-and-time-value, .registration-form .login-btn .btn::-webkit-date-and-time-value,
 .login-form .btn::-webkit-date-and-time-value,
-.login-form .login-btn .btn::-webkit-date-and-time-value {
+.login-form .login-btn .btn::-webkit-date-and-time-value,
+#change-avatar .btn::-webkit-date-and-time-value {
   height: 1.5em;
 }
 .form-control::placeholder, .registration-form .btn::placeholder, .registration-form .login-btn .btn::placeholder,
 .login-form .btn::placeholder,
-.login-form .login-btn .btn::placeholder {
+.login-form .login-btn .btn::placeholder,
+#change-avatar .btn::placeholder {
   color: #6c757d;
   opacity: 1;
 }
 .form-control:disabled, .registration-form .btn:disabled,
-.login-form .btn:disabled {
+.login-form .btn:disabled,
+#change-avatar .btn:disabled {
   background-color: #e9ecef;
   opacity: 1;
 }
 .form-control::file-selector-button, .registration-form .btn::file-selector-button, .registration-form .login-btn .btn::file-selector-button,
 .login-form .btn::file-selector-button,
-.login-form .login-btn .btn::file-selector-button {
+.login-form .login-btn .btn::file-selector-button,
+#change-avatar .btn::file-selector-button {
   padding: 0.375rem 0.75rem;
   margin: -0.375rem -0.75rem;
   margin-inline-end: 0.75rem;
@@ -2070,12 +2079,14 @@ progress {
 @media (prefers-reduced-motion: reduce) {
   .form-control::file-selector-button, .registration-form .btn::file-selector-button, .registration-form .login-btn .btn::file-selector-button,
   .login-form .btn::file-selector-button,
-  .login-form .login-btn .btn::file-selector-button {
+  .login-form .login-btn .btn::file-selector-button,
+  #change-avatar .btn::file-selector-button {
     transition: none;
   }
 }
 .form-control:hover:not(:disabled):not([readonly])::file-selector-button, .registration-form .btn:hover:not(:disabled):not([readonly])::file-selector-button,
-.login-form .btn:hover:not(:disabled):not([readonly])::file-selector-button {
+.login-form .btn:hover:not(:disabled):not([readonly])::file-selector-button,
+#change-avatar .btn:hover:not(:disabled):not([readonly])::file-selector-button {
   background-color: #dde0e3;
 }
 
@@ -2124,7 +2135,8 @@ progress {
 
 textarea.form-control, .registration-form textarea.btn, .registration-form .login-btn textarea.btn,
 .login-form textarea.btn,
-.login-form .login-btn textarea.btn {
+.login-form .login-btn textarea.btn,
+#change-avatar textarea.btn {
   min-height: calc(1.5em + 0.75rem + 2px);
 }
 textarea.form-control-sm {
@@ -2329,7 +2341,9 @@ textarea.form-control-lg {
   clip: rect(0, 0, 0, 0);
   pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+.btn-check[disabled] + .btn,
+#change-avatar .login-btn .btn-check[disabled] + .btn, .btn-check:disabled + .btn,
+#change-avatar .login-btn .btn-check:disabled + .btn {
   pointer-events: none;
   filter: none;
   opacity: 0.65;
@@ -2422,6 +2436,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control, .registration-form .form-floating > .btn,
 .login-form .form-floating > .btn,
+#change-avatar .form-floating > .btn,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select {
   height: calc(3.5rem + 2px);
@@ -2450,17 +2465,21 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control, .registration-form .form-floating > .btn,
 .login-form .form-floating > .btn,
+#change-avatar .form-floating > .btn,
 .form-floating > .form-control-plaintext {
   padding: 1rem 0.75rem;
 }
 .form-floating > .form-control::placeholder, .registration-form .form-floating > .btn::placeholder,
 .login-form .form-floating > .btn::placeholder,
+#change-avatar .form-floating > .btn::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
   color: transparent;
 }
 .form-floating > .form-control:focus, .registration-form .form-floating > .btn:focus,
-.login-form .form-floating > .btn:focus, .form-floating > .form-control:not(:placeholder-shown), .registration-form .form-floating > .btn:not(:placeholder-shown),
+.login-form .form-floating > .btn:focus,
+#change-avatar .form-floating > .btn:focus, .form-floating > .form-control:not(:placeholder-shown), .registration-form .form-floating > .btn:not(:placeholder-shown),
 .login-form .form-floating > .btn:not(:placeholder-shown),
+#change-avatar .form-floating > .btn:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
 .form-floating > .form-control-plaintext:not(:placeholder-shown) {
   padding-top: 1.625rem;
@@ -2468,6 +2487,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control:-webkit-autofill, .registration-form .form-floating > .btn:-webkit-autofill,
 .login-form .form-floating > .btn:-webkit-autofill,
+#change-avatar .form-floating > .btn:-webkit-autofill,
 .form-floating > .form-control-plaintext:-webkit-autofill {
   padding-top: 1.625rem;
   padding-bottom: 0.625rem;
@@ -2478,16 +2498,19 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control:focus ~ label, .registration-form .form-floating > .btn:focus ~ label,
 .login-form .form-floating > .btn:focus ~ label,
+#change-avatar .form-floating > .btn:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .registration-form .form-floating > .btn:not(:placeholder-shown) ~ label,
 .login-form .form-floating > .btn:not(:placeholder-shown) ~ label,
+#change-avatar .form-floating > .btn:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control:-webkit-autofill ~ label, .registration-form .form-floating > .btn:-webkit-autofill ~ label,
-.login-form .form-floating > .btn:-webkit-autofill ~ label {
+.login-form .form-floating > .btn:-webkit-autofill ~ label,
+#change-avatar .form-floating > .btn:-webkit-autofill ~ label {
   opacity: 0.65;
   transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -2504,6 +2527,7 @@ textarea.form-control-lg {
 }
 .input-group > .form-control, .registration-form .input-group > .btn,
 .login-form .input-group > .btn,
+#change-avatar .input-group > .btn,
 .input-group > .form-select,
 .input-group > .form-floating {
   position: relative;
@@ -2513,17 +2537,22 @@ textarea.form-control-lg {
 }
 .input-group > .form-control:focus, .registration-form .input-group > .btn:focus,
 .login-form .input-group > .btn:focus,
+#change-avatar .input-group > .btn:focus,
 .input-group > .form-select:focus,
 .input-group > .form-floating:focus-within {
   z-index: 5;
 }
 .input-group .btn, .input-group .registration-form .login-btn .btn, .registration-form .login-btn .input-group .btn,
 .input-group .login-form .login-btn .btn,
-.login-form .login-btn .input-group .btn {
+.login-form .login-btn .input-group .btn,
+.input-group #change-avatar .login-btn .btn,
+#change-avatar .login-btn .input-group .btn {
   position: relative;
   z-index: 2;
 }
-.input-group .btn:focus {
+.input-group .btn:focus,
+.input-group #change-avatar .login-btn .btn:focus,
+#change-avatar .login-btn .input-group .btn:focus {
   z-index: 5;
 }
 
@@ -2543,6 +2572,7 @@ textarea.form-control-lg {
 }
 
 .input-group-lg > .form-control,
+#change-avatar .input-group-lg > .btn,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
 .input-group-lg > .btn,
@@ -2554,6 +2584,7 @@ textarea.form-control-lg {
 }
 
 .input-group-sm > .form-control,
+#change-avatar .input-group-sm > .btn,
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
 .input-group-sm > .btn,
@@ -2574,6 +2605,7 @@ textarea.form-control-lg {
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
 .registration-form .input-group:not(.has-validation) > .form-floating:not(:last-child) > .btn,
 .login-form .input-group:not(.has-validation) > .form-floating:not(:last-child) > .btn,
+#change-avatar .input-group:not(.has-validation) > .form-floating:not(:last-child) > .btn,
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -2583,6 +2615,7 @@ textarea.form-control-lg {
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
 .registration-form .input-group.has-validation > .form-floating:nth-last-child(n+3) > .btn,
 .login-form .input-group.has-validation > .form-floating:nth-last-child(n+3) > .btn,
+#change-avatar .input-group.has-validation > .form-floating:nth-last-child(n+3) > .btn,
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -2594,6 +2627,7 @@ textarea.form-control-lg {
 }
 .input-group > .form-floating:not(:first-child) > .form-control, .registration-form .input-group > .form-floating:not(:first-child) > .btn,
 .login-form .input-group > .form-floating:not(:first-child) > .btn,
+#change-avatar .input-group > .form-floating:not(:first-child) > .btn,
 .input-group > .form-floating:not(:first-child) > .form-select {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
@@ -2630,8 +2664,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:valid, .was-validated .registration-form .btn:valid, .registration-form .was-validated .btn:valid,
 .was-validated .login-form .btn:valid,
-.login-form .was-validated .btn:valid, .form-control.is-valid, .registration-form .is-valid.btn,
-.login-form .is-valid.btn {
+.login-form .was-validated .btn:valid,
+.was-validated #change-avatar .btn:valid,
+#change-avatar .was-validated .btn:valid, .form-control.is-valid, .registration-form .is-valid.btn,
+.login-form .is-valid.btn,
+#change-avatar .is-valid.btn {
   border-color: #198754;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
@@ -2641,16 +2678,22 @@ textarea.form-control-lg {
 }
 .was-validated .form-control:valid:focus, .was-validated .registration-form .btn:valid:focus, .registration-form .was-validated .btn:valid:focus,
 .was-validated .login-form .btn:valid:focus,
-.login-form .was-validated .btn:valid:focus, .form-control.is-valid:focus, .registration-form .is-valid.btn:focus,
-.login-form .is-valid.btn:focus {
+.login-form .was-validated .btn:valid:focus,
+.was-validated #change-avatar .btn:valid:focus,
+#change-avatar .was-validated .btn:valid:focus, .form-control.is-valid:focus, .registration-form .is-valid.btn:focus,
+.login-form .is-valid.btn:focus,
+#change-avatar .is-valid.btn:focus {
   border-color: #198754;
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 
 .was-validated textarea.form-control:valid, .was-validated .registration-form textarea.btn:valid, .registration-form .was-validated textarea.btn:valid,
 .was-validated .login-form textarea.btn:valid,
-.login-form .was-validated textarea.btn:valid, textarea.form-control.is-valid, .registration-form textarea.is-valid.btn,
-.login-form textarea.is-valid.btn {
+.login-form .was-validated textarea.btn:valid,
+.was-validated #change-avatar textarea.btn:valid,
+#change-avatar .was-validated textarea.btn:valid, textarea.form-control.is-valid, .registration-form textarea.is-valid.btn,
+.login-form textarea.is-valid.btn,
+#change-avatar textarea.is-valid.btn {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -2692,8 +2735,11 @@ textarea.form-control-lg {
 
 .was-validated .input-group > .form-control:not(:focus):valid, .was-validated .registration-form .input-group > .btn:not(:focus):valid, .registration-form .was-validated .input-group > .btn:not(:focus):valid,
 .was-validated .login-form .input-group > .btn:not(:focus):valid,
-.login-form .was-validated .input-group > .btn:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, .registration-form .input-group > .btn:not(:focus).is-valid,
+.login-form .was-validated .input-group > .btn:not(:focus):valid,
+.was-validated #change-avatar .input-group > .btn:not(:focus):valid,
+#change-avatar .was-validated .input-group > .btn:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, .registration-form .input-group > .btn:not(:focus).is-valid,
 .login-form .input-group > .btn:not(:focus).is-valid,
+#change-avatar .input-group > .btn:not(:focus).is-valid,
 .was-validated .input-group > .form-select:not(:focus):valid,
 .input-group > .form-select:not(:focus).is-valid,
 .was-validated .input-group > .form-floating:not(:focus-within):valid,
@@ -2732,8 +2778,11 @@ textarea.form-control-lg {
 
 .was-validated .form-control:invalid, .was-validated .registration-form .btn:invalid, .registration-form .was-validated .btn:invalid,
 .was-validated .login-form .btn:invalid,
-.login-form .was-validated .btn:invalid, .form-control.is-invalid, .registration-form .is-invalid.btn,
-.login-form .is-invalid.btn {
+.login-form .was-validated .btn:invalid,
+.was-validated #change-avatar .btn:invalid,
+#change-avatar .was-validated .btn:invalid, .form-control.is-invalid, .registration-form .is-invalid.btn,
+.login-form .is-invalid.btn,
+#change-avatar .is-invalid.btn {
   border-color: #dc3545;
   padding-right: calc(1.5em + 0.75rem);
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
@@ -2743,16 +2792,22 @@ textarea.form-control-lg {
 }
 .was-validated .form-control:invalid:focus, .was-validated .registration-form .btn:invalid:focus, .registration-form .was-validated .btn:invalid:focus,
 .was-validated .login-form .btn:invalid:focus,
-.login-form .was-validated .btn:invalid:focus, .form-control.is-invalid:focus, .registration-form .is-invalid.btn:focus,
-.login-form .is-invalid.btn:focus {
+.login-form .was-validated .btn:invalid:focus,
+.was-validated #change-avatar .btn:invalid:focus,
+#change-avatar .was-validated .btn:invalid:focus, .form-control.is-invalid:focus, .registration-form .is-invalid.btn:focus,
+.login-form .is-invalid.btn:focus,
+#change-avatar .is-invalid.btn:focus {
   border-color: #dc3545;
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
 .was-validated textarea.form-control:invalid, .was-validated .registration-form textarea.btn:invalid, .registration-form .was-validated textarea.btn:invalid,
 .was-validated .login-form textarea.btn:invalid,
-.login-form .was-validated textarea.btn:invalid, textarea.form-control.is-invalid, .registration-form textarea.is-invalid.btn,
-.login-form textarea.is-invalid.btn {
+.login-form .was-validated textarea.btn:invalid,
+.was-validated #change-avatar textarea.btn:invalid,
+#change-avatar .was-validated textarea.btn:invalid, textarea.form-control.is-invalid, .registration-form textarea.is-invalid.btn,
+.login-form textarea.is-invalid.btn,
+#change-avatar textarea.is-invalid.btn {
   padding-right: calc(1.5em + 0.75rem);
   background-position: top calc(0.375em + 0.1875rem) right calc(0.375em + 0.1875rem);
 }
@@ -2794,8 +2849,11 @@ textarea.form-control-lg {
 
 .was-validated .input-group > .form-control:not(:focus):invalid, .was-validated .registration-form .input-group > .btn:not(:focus):invalid, .registration-form .was-validated .input-group > .btn:not(:focus):invalid,
 .was-validated .login-form .input-group > .btn:not(:focus):invalid,
-.login-form .was-validated .input-group > .btn:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .registration-form .input-group > .btn:not(:focus).is-invalid,
+.login-form .was-validated .input-group > .btn:not(:focus):invalid,
+.was-validated #change-avatar .input-group > .btn:not(:focus):invalid,
+#change-avatar .was-validated .input-group > .btn:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, .registration-form .input-group > .btn:not(:focus).is-invalid,
 .login-form .input-group > .btn:not(:focus).is-invalid,
+#change-avatar .input-group > .btn:not(:focus).is-invalid,
 .was-validated .input-group > .form-select:not(:focus):invalid,
 .input-group > .form-select:not(:focus).is-invalid,
 .was-validated .input-group > .form-floating:not(:focus-within):invalid,
@@ -2804,7 +2862,8 @@ textarea.form-control-lg {
 }
 
 .btn, .registration-form .login-btn .btn,
-.login-form .login-btn .btn {
+.login-form .login-btn .btn,
+#change-avatar .login-btn .btn {
   --bs-btn-padding-x: 0.75rem;
   --bs-btn-padding-y: 0.375rem;
   --bs-btn-font-family: ;
@@ -2839,49 +2898,68 @@ textarea.form-control-lg {
 }
 @media (prefers-reduced-motion: reduce) {
   .btn, .registration-form .login-btn .btn,
-  .login-form .login-btn .btn {
+  .login-form .login-btn .btn,
+  #change-avatar .login-btn .btn {
     transition: none;
   }
 }
 .btn:hover, .registration-form .login-btn .btn:hover,
-.login-form .login-btn .btn:hover {
+.login-form .login-btn .btn:hover,
+#change-avatar .login-btn .btn:hover {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
 }
-.btn-check + .btn:hover {
+.btn-check + .btn:hover,
+#change-avatar .login-btn .btn-check + .btn:hover {
   color: var(--bs-btn-color);
   background-color: var(--bs-btn-bg);
   border-color: var(--bs-btn-border-color);
 }
 .btn:focus-visible, .registration-form .login-btn .btn:focus-visible,
-.login-form .login-btn .btn:focus-visible {
+.login-form .login-btn .btn:focus-visible,
+#change-avatar .login-btn .btn:focus-visible {
   color: var(--bs-btn-hover-color);
   background-color: var(--bs-btn-hover-bg);
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:focus-visible + .btn {
+.btn-check:focus-visible + .btn,
+#change-avatar .login-btn .btn-check:focus-visible + .btn {
   border-color: var(--bs-btn-hover-border-color);
   outline: 0;
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .registration-form .login-btn .active.btn,
-.login-form .login-btn .active.btn, .btn.show, .registration-form .login-btn .show.btn,
-.login-form .login-btn .show.btn {
+.btn-check:checked + .btn,
+#change-avatar .login-btn .btn-check:checked + .btn, :not(.btn-check) + .btn:active,
+#change-avatar .login-btn :not(.btn-check) + .btn:active, .btn:first-child:active,
+#change-avatar .login-btn .btn:first-child:active, .btn.active, .registration-form .login-btn .active.btn,
+.login-form .login-btn .active.btn,
+#change-avatar .login-btn .active.btn, .btn.show, .registration-form .login-btn .show.btn,
+.login-form .login-btn .show.btn,
+#change-avatar .login-btn .show.btn {
   color: var(--bs-btn-active-color);
   background-color: var(--bs-btn-active-bg);
   border-color: var(--bs-btn-active-border-color);
 }
-.btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible {
+.btn-check:checked + .btn:focus-visible,
+#change-avatar .login-btn .btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible,
+#change-avatar .login-btn :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible,
+#change-avatar .login-btn .btn:first-child:active:focus-visible, .btn.active:focus-visible,
+#change-avatar .login-btn .active.btn:focus-visible, .btn.show:focus-visible,
+#change-avatar .login-btn .show.btn:focus-visible {
   box-shadow: var(--bs-btn-focus-box-shadow);
 }
 .btn:disabled, .registration-form .login-btn .btn:disabled,
-.login-form .login-btn .btn:disabled, .btn.disabled, .registration-form .login-btn .disabled.btn,
-.login-form .login-btn .disabled.btn, fieldset:disabled .btn, fieldset:disabled .registration-form .login-btn .btn, .registration-form .login-btn fieldset:disabled .btn,
+.login-form .login-btn .btn:disabled,
+#change-avatar .login-btn .btn:disabled, .btn.disabled, .registration-form .login-btn .disabled.btn,
+.login-form .login-btn .disabled.btn,
+#change-avatar .login-btn .disabled.btn, fieldset:disabled .btn, fieldset:disabled .registration-form .login-btn .btn, .registration-form .login-btn fieldset:disabled .btn,
 fieldset:disabled .login-form .login-btn .btn,
-.login-form .login-btn fieldset:disabled .btn {
+.login-form .login-btn fieldset:disabled .btn,
+fieldset:disabled #change-avatar .login-btn .btn,
+#change-avatar .login-btn fieldset:disabled .btn {
   color: var(--bs-btn-disabled-color);
   pointer-events: none;
   background-color: var(--bs-btn-disabled-bg);
@@ -3116,7 +3194,8 @@ fieldset:disabled .login-form .login-btn .btn,
 }
 
 .btn-lg, .btn-group-lg > .btn, .registration-form .login-btn .btn-group-lg > .btn,
-.login-form .login-btn .btn-group-lg > .btn {
+.login-form .login-btn .btn-group-lg > .btn,
+#change-avatar .login-btn .btn-group-lg > .btn {
   --bs-btn-padding-y: 0.5rem;
   --bs-btn-padding-x: 1rem;
   --bs-btn-font-size: 1.25rem;
@@ -3124,7 +3203,8 @@ fieldset:disabled .login-form .login-btn .btn,
 }
 
 .btn-sm, .btn-group-sm > .btn, .registration-form .login-btn .btn-group-sm > .btn,
-.login-form .login-btn .btn-group-sm > .btn {
+.login-form .login-btn .btn-group-sm > .btn,
+#change-avatar .login-btn .btn-group-sm > .btn {
   --bs-btn-padding-y: 0.25rem;
   --bs-btn-padding-x: 0.5rem;
   --bs-btn-font-size: 0.875rem;
@@ -3492,24 +3572,38 @@ fieldset:disabled .login-form .login-btn .btn,
 }
 .btn-group > .btn, .registration-form .login-btn .btn-group > .btn,
 .login-form .login-btn .btn-group > .btn,
+#change-avatar .login-btn .btn-group > .btn,
 .btn-group-vertical > .btn,
 .registration-form .login-btn .btn-group-vertical > .btn,
-.login-form .login-btn .btn-group-vertical > .btn {
+.login-form .login-btn .btn-group-vertical > .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn {
   position: relative;
   flex: 1 1 auto;
 }
 .btn-group > .btn-check:checked + .btn,
+#change-avatar .login-btn .btn-group > .btn-check:checked + .btn,
 .btn-group > .btn-check:focus + .btn,
+#change-avatar .login-btn .btn-group > .btn-check:focus + .btn,
 .btn-group > .btn:hover,
+#change-avatar .login-btn .btn-group > .btn:hover,
 .btn-group > .btn:focus,
+#change-avatar .login-btn .btn-group > .btn:focus,
 .btn-group > .btn:active,
+#change-avatar .login-btn .btn-group > .btn:active,
 .btn-group > .btn.active,
+#change-avatar .login-btn .btn-group > .active.btn,
 .btn-group-vertical > .btn-check:checked + .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn-check:checked + .btn,
 .btn-group-vertical > .btn-check:focus + .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn-check:focus + .btn,
 .btn-group-vertical > .btn:hover,
+#change-avatar .login-btn .btn-group-vertical > .btn:hover,
 .btn-group-vertical > .btn:focus,
+#change-avatar .login-btn .btn-group-vertical > .btn:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+#change-avatar .login-btn .btn-group-vertical > .btn:active,
+.btn-group-vertical > .btn.active,
+#change-avatar .login-btn .btn-group-vertical > .active.btn {
   z-index: 1;
 }
 
@@ -3526,18 +3620,25 @@ fieldset:disabled .login-form .login-btn .btn,
   border-radius: 1.375rem;
 }
 .btn-group > :not(.btn-check:first-child) + .btn,
+#change-avatar .login-btn .btn-group > :not(.btn-check:first-child) + .btn,
 .btn-group > .btn-group:not(:first-child) {
   margin-left: -1px;
 }
 .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+#change-avatar .login-btn .btn-group > .btn:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn.dropdown-toggle-split:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
+#change-avatar .login-btn .btn-group > .dropdown-toggle-split.btn:first-child,
+.btn-group > .btn-group:not(:last-child) > .btn,
+#change-avatar .login-btn .btn-group > .btn-group:not(:last-child) > .btn {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
 .btn-group > .btn:nth-child(n+3),
+#change-avatar .login-btn .btn-group > .btn:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+#change-avatar .login-btn .btn-group > :not(.btn-check) + .btn,
+.btn-group > .btn-group:not(:first-child) > .btn,
+#change-avatar .login-btn .btn-group > .btn-group:not(:first-child) > .btn {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3553,12 +3654,14 @@ fieldset:disabled .login-form .login-btn .btn,
   margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split,
+#change-avatar .login-btn .btn-group-sm > .btn + .dropdown-toggle-split {
   padding-right: 0.375rem;
   padding-left: 0.375rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split,
+#change-avatar .login-btn .btn-group-lg > .btn + .dropdown-toggle-split {
   padding-right: 0.75rem;
   padding-left: 0.75rem;
 }
@@ -3570,20 +3673,159 @@ fieldset:disabled .login-form .login-btn .btn,
 }
 .btn-group-vertical > .btn, .registration-form .login-btn .btn-group-vertical > .btn,
 .login-form .login-btn .btn-group-vertical > .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn,
 .btn-group-vertical > .btn-group {
   width: 100%;
 }
 .btn-group-vertical > .btn:not(:first-child),
+#change-avatar .login-btn .btn-group-vertical > .btn:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
   margin-top: -1px;
 }
 .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+#change-avatar .login-btn .btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn-group:not(:last-child) > .btn {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn,
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical > .btn ~ .btn, .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn, .registration-form .login-btn .btn-group-vertical > .btn ~ .btn, .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form .registration-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form #change-avatar .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.registration-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .registration-form .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .registration-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.login-form #change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn ~ .btn,
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.registration-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.login-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+#change-avatar .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.registration-form .login-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.login-form .registration-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.registration-form #change-avatar .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+#change-avatar .registration-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+.login-form #change-avatar .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn,
+#change-avatar .login-form .login-btn .btn-group-vertical > .btn-group:not(:first-child) > .btn {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
@@ -4598,7 +4840,8 @@ fieldset:disabled .login-form .login-btn .btn,
 }
 
 .btn .badge, .registration-form .login-btn .btn .badge,
-.login-form .login-btn .btn .badge {
+.login-form .login-btn .btn .badge,
+#change-avatar .login-btn .btn .badge {
   position: relative;
   top: -1px;
 }
@@ -6494,7 +6737,8 @@ fieldset:disabled .login-form .login-btn .btn,
   opacity: 0.5;
 }
 .placeholder.btn::before, .registration-form .login-btn .placeholder.btn::before,
-.login-form .login-btn .placeholder.btn::before {
+.login-form .login-btn .placeholder.btn::before,
+#change-avatar .login-btn .placeholder.btn::before {
   display: inline-block;
   content: "";
 }
@@ -10655,9 +10899,107 @@ body {
   position: relative;
   width: 40%;
 }
-.search .form-control, .search .registration-form .btn, .registration-form .search .btn,
+.search .form-control, .search .registration-form .btn, .search .registration-form .login-btn .btn,
+.search .registration-form .login-form .login-btn .btn,
+.login-form .login-btn .search .registration-form .btn,
+.search .registration-form #change-avatar .login-btn .btn,
+#change-avatar .login-btn .search .registration-form .btn,
+.search .registration-form .login-form .login-btn .btn,
+.search .login-form .registration-form .login-btn .btn,
+.login-form .search .registration-form .login-btn .btn,
+.search .registration-form #change-avatar .login-btn .btn,
+.search #change-avatar .registration-form .login-btn .btn,
+#change-avatar .search .registration-form .login-btn .btn,
+.search .registration-form .login-form #change-avatar .login-btn .btn,
+.login-form #change-avatar .login-btn .search .registration-form .btn,
+.search .registration-form #change-avatar .login-form .login-btn .btn,
+#change-avatar .login-form .login-btn .search .registration-form .btn, .registration-form .search .btn, .registration-form .search .login-btn .btn, .registration-form .login-btn .search .btn,
+.registration-form .search .login-form .login-btn .btn,
+.login-form .login-btn .registration-form .search .btn,
+.registration-form .search #change-avatar .login-btn .btn,
+#change-avatar .login-btn .registration-form .search .btn,
+.registration-form .search .login-form .login-btn .btn,
+.registration-form .login-form .login-btn .search .btn,
+.login-form .registration-form .search .login-btn .btn,
+.login-form .registration-form .login-btn .search .btn,
+.registration-form .search #change-avatar .login-btn .btn,
+.registration-form #change-avatar .login-btn .search .btn,
+#change-avatar .registration-form .search .login-btn .btn,
+#change-avatar .registration-form .login-btn .search .btn,
+.registration-form .search .login-form #change-avatar .login-btn .btn,
+.login-form #change-avatar .login-btn .registration-form .search .btn,
+.registration-form .search #change-avatar .login-form .login-btn .btn,
+#change-avatar .login-form .login-btn .registration-form .search .btn,
 .search .login-form .btn,
-.login-form .search .btn {
+.search .login-form .registration-form .login-btn .btn,
+.registration-form .login-btn .search .login-form .btn,
+.search .login-form .login-btn .btn,
+.search .login-form #change-avatar .login-btn .btn,
+#change-avatar .login-btn .search .login-form .btn,
+.search .registration-form .login-form .login-btn .btn,
+.registration-form .search .login-form .login-btn .btn,
+.search .login-form .registration-form .login-btn .btn,
+.search .login-form .registration-form #change-avatar .login-btn .btn,
+.registration-form #change-avatar .login-btn .search .login-form .btn,
+.search .login-form #change-avatar .registration-form .login-btn .btn,
+#change-avatar .registration-form .login-btn .search .login-form .btn,
+.search .login-form #change-avatar .login-btn .btn,
+.search #change-avatar .login-form .login-btn .btn,
+#change-avatar .search .login-form .login-btn .btn,
+.login-form .search .btn,
+.login-form .search .registration-form .login-btn .btn,
+.registration-form .login-btn .login-form .search .btn,
+.login-form .search .login-btn .btn,
+.login-form .login-btn .search .btn,
+.login-form .search #change-avatar .login-btn .btn,
+#change-avatar .login-btn .login-form .search .btn,
+.registration-form .login-form .search .login-btn .btn,
+.registration-form .login-form .login-btn .search .btn,
+.login-form .search .registration-form .login-btn .btn,
+.login-form .registration-form .login-btn .search .btn,
+.login-form .search .registration-form #change-avatar .login-btn .btn,
+.registration-form #change-avatar .login-btn .login-form .search .btn,
+.login-form .search #change-avatar .registration-form .login-btn .btn,
+#change-avatar .registration-form .login-btn .login-form .search .btn,
+.login-form .search #change-avatar .login-btn .btn,
+.login-form #change-avatar .login-btn .search .btn,
+#change-avatar .login-form .search .login-btn .btn,
+#change-avatar .login-form .login-btn .search .btn,
+.search #change-avatar .btn,
+.search #change-avatar .registration-form .login-btn .btn,
+.registration-form .login-btn .search #change-avatar .btn,
+.search #change-avatar .login-form .login-btn .btn,
+.login-form .login-btn .search #change-avatar .btn,
+.search #change-avatar .login-btn .btn,
+.search #change-avatar .registration-form .login-form .login-btn .btn,
+.registration-form .login-form .login-btn .search #change-avatar .btn,
+.search #change-avatar .login-form .registration-form .login-btn .btn,
+.login-form .registration-form .login-btn .search #change-avatar .btn,
+.search .registration-form #change-avatar .login-btn .btn,
+.registration-form .search #change-avatar .login-btn .btn,
+.search #change-avatar .registration-form .login-btn .btn,
+.search .login-form #change-avatar .login-btn .btn,
+.login-form .search #change-avatar .login-btn .btn,
+.search #change-avatar .login-form .login-btn .btn,
+#change-avatar .search .btn,
+#change-avatar .search .registration-form .login-btn .btn,
+.registration-form .login-btn #change-avatar .search .btn,
+#change-avatar .search .login-form .login-btn .btn,
+.login-form .login-btn #change-avatar .search .btn,
+#change-avatar .search .login-btn .btn,
+#change-avatar .login-btn .search .btn,
+#change-avatar .search .registration-form .login-form .login-btn .btn,
+.registration-form .login-form .login-btn #change-avatar .search .btn,
+#change-avatar .search .login-form .registration-form .login-btn .btn,
+.login-form .registration-form .login-btn #change-avatar .search .btn,
+.registration-form #change-avatar .search .login-btn .btn,
+.registration-form #change-avatar .login-btn .search .btn,
+#change-avatar .search .registration-form .login-btn .btn,
+#change-avatar .registration-form .login-btn .search .btn,
+.login-form #change-avatar .search .login-btn .btn,
+.login-form #change-avatar .login-btn .search .btn,
+#change-avatar .search .login-form .login-btn .btn,
+#change-avatar .login-form .login-btn .search .btn {
   padding-right: 40px;
   border-radius: 1.375rem;
 }
@@ -10676,28 +11018,39 @@ body {
 }
 
 .registration-form .form-label,
-.login-form .form-label {
+.login-form .form-label,
+#change-avatar .form-label {
   left: 10px;
   top: -20px;
 }
 .registration-form .form-control, .registration-form .btn, .registration-form .login-btn .btn,
 .login-form .form-control,
 .login-form .btn,
-.login-form .login-btn .btn {
+.login-form .login-btn .btn,
+#change-avatar .form-control,
+#change-avatar .btn {
   border-radius: 0%;
 }
 .registration-form .btn, .registration-form .login-btn .btn,
 .login-form .btn,
-.login-form .login-btn .btn {
+.login-form .login-btn .btn,
+#change-avatar .btn {
   width: 100px;
   background-color: #1afffd;
   color: #740414;
 }
 .registration-form .was-validated .btn:valid,
-.login-form .was-validated .btn:valid {
+.registration-form .was-validated #change-avatar .login-btn .btn:valid,
+.login-form .was-validated .btn:valid,
+.login-form .was-validated #change-avatar .login-btn .btn:valid,
+#change-avatar .was-validated .btn:valid {
   background-image: none;
   padding-right: 12px;
   border: none;
+}
+
+#change-avatar .btn {
+  width: 200px;
 }
 
 main {
