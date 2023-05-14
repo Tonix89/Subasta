@@ -69,11 +69,11 @@ export function homeDisplay() {
               bidHistoryCont.innerHTML += `<div class="d-flex justify-content-between align-items-center mb-2">
                           <div class="d-flex">
                             <img src="assets/icon/user.svg" class="me-2"/>
-                            <h1 class="m-0">${bidderName}</h1>
+                            <h2 class="m-0">${bidderName}</h2>
                           </div>
                           <div class="d-flex">
                             <img src="assets/icon/coins.svg" class="me-2"/>
-                            <h1 class="m-0">${amount}</h1>
+                            <h2 class="m-0">${amount}</h2>
                           </div>
                         </div>`;
             } else {

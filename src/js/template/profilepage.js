@@ -5,7 +5,8 @@ export function profilePageTemp() {
   </div>
   <button
     type="button"
-    class="btn btn-secondary fw-bold fs-4 text-success border rounded p-1 mb-4"
+    class="btn btn-secondary fw-bold fs-4 text-success border rounded p-1 mb-4" data-bs-toggle="modal"
+    data-bs-target="#add-listing-modal"
     style="width: 200px"
   >
     Add Listing
@@ -24,5 +25,5 @@ export function profilePageTemp() {
       Winnings
     </button>
   </div>
-  <div id="listing-card-cont"></div>`;
+  <div class="listing-cards-cont"></div>`;
 }

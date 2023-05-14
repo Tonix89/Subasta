@@ -4,6 +4,8 @@ import { getProfile } from '../api/profile.js';
 import { getStorage } from '../storage/get.js';
 import { url } from '../api/baseurl.js';
 import { secondaryLoader } from '../variables/loader.js';
+import { profileListDisplay } from './profile-list.js';
+
 export function profilePageDisplay() {
   homePage.classList.add('d-none');
   profilePageTemp();
@@ -27,5 +29,6 @@ export function profilePageDisplay() {
                             <button type="button" class="btn btn-light border border-secondary rounded w-75 fw-bold fs-3 text-success" data-bs-toggle="modal"
                             data-bs-target="#edit-avatar-modal">Edit Avatar</button>
     </div>`;
+    profileListDisplay(name);
   });
 }

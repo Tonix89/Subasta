@@ -1,6 +1,7 @@
 import { goSignup } from '../forms/signup.js';
 import { goLogin } from '../forms/login.js';
 import { goChangeAvatar } from '../forms/change-avatar.js';
+import { addNewList } from '../forms/add-listing.js';
 
 export function validateForm() {
   (() => {
@@ -26,6 +27,9 @@ export function validateForm() {
                 break;
               case 'change-avatar':
                 goChangeAvatar(form);
+                break;
+              case 'add-listing':
+                addNewList(form);
                 break;
               default:
                 break;

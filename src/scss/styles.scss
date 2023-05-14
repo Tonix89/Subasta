@@ -33,7 +33,8 @@ body {
 
 .registration-form,
 .login-form,
-#change-avatar {
+#change-avatar,
+#add-listing {
   .form-label {
     left: 10px;
     top: -20px;
@@ -55,6 +56,14 @@ body {
     padding-right: 12px;
     border: none;
   }
+  #add-media,
+  #remove-media {
+    width: 45px;
+    background-color: white;
+  }
+  .date {
+    margin-top: 4rem;
+  }
 }
 
 #change-avatar {
@@ -62,6 +71,13 @@ body {
     width: 200px;
   }
 }
+
+#add-listing {
+  #date {
+    background-image: none;
+  }
+}
+
 main {
   min-height: 85vh;
 }

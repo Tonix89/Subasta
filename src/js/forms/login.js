@@ -3,7 +3,7 @@ import { postApi } from '../api/post.js';
 
 export async function goLogin(form) {
   //   console.log(form);
-  const formInput = form.querySelectorAll('input, textarea');
+  const formInput = form.querySelectorAll('input');
 
   let inputValue = [];
   formInput.forEach((input) => {
