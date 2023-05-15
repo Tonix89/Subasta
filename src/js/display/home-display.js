@@ -1,6 +1,6 @@
 import { url } from '../api/baseurl.js';
 import { getApi } from '../api/get.js';
-import { countDown } from '../functions/count-down.js';
+import { getCountdown } from '../functions/count-down.js';
 import { homePageTemp } from '../template/homepage.js';
 import { secondaryLoader } from '../variables/loader.js';
 
@@ -95,15 +95,12 @@ export function homeDisplay() {
     const carouselItems = document.querySelectorAll('.carousel-item');
     carouselItems[0].classList.add('active');
 
-    getTimer();
+    const timerConts = document.querySelectorAll('.timer-cont');
+    timerConts.forEach((timerCont) => {
+      const [, endsAt] = timerCont.id.split('*');
+      // console.log(endsAt);
+      const endDate = new Date(endsAt).getTime();
+      getCountdown(endDate, timerCont);
+    });
   });
-}
-
-export function getTimer() {
-  const activeList = document.querySelector('.carousel-item.active');
-  const timerCont = activeList.querySelector('.timer-cont');
-  const [, endsAt] = timerCont.id.split('*');
-  // console.log(endsAt);
-  const endDate = new Date(endsAt).getTime();
-  countDown(endDate, timerCont);
 }

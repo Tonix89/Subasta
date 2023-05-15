@@ -13324,6 +13324,20 @@ body {
   background-image: none;
 }
 
+#listing-cards-cont {
+  max-width: -webkit-fill-available;
+}
+#listing-cards-cont .timer-icon {
+  width: 30px;
+  height: 30px;
+}
+#listing-cards-cont .card-footer {
+  background-color: white;
+}
+#listing-cards-cont .card-footer .listing-viewMore-btn {
+  font-size: 18px;
+}
+
 main {
   min-height: 85vh;
 }
@@ -13386,6 +13400,9 @@ main {
   .search {
     width: 50%;
   }
+  #listing-cards-cont .card-footer .listing-viewMore-btn {
+    font-size: 15px;
+  }
 }
 @media (max-width: 575.98px) {
   #home-page {
@@ -13406,6 +13423,9 @@ main {
   }
   #profile-page .list-win {
     width: 150px;
+  }
+  #listing-cards-cont .card-footer .listing-viewMore-btn {
+    font-size: 12px;
   }
 }
 

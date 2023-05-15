@@ -78,6 +78,20 @@ body {
   }
 }
 
+#listing-cards-cont {
+  max-width: -webkit-fill-available;
+  .timer-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .card-footer {
+    background-color: white;
+    .listing-viewMore-btn {
+      font-size: 18px;
+    }
+  }
+}
+
 main {
   min-height: 85vh;
 }
@@ -147,6 +161,13 @@ main {
   .search {
     width: 50%;
   }
+  #listing-cards-cont {
+    .card-footer {
+      .listing-viewMore-btn {
+        font-size: 15px;
+      }
+    }
+  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -174,6 +195,14 @@ main {
     }
     .list-win {
       width: 150px;
+    }
+  }
+
+  #listing-cards-cont {
+    .card-footer {
+      .listing-viewMore-btn {
+        font-size: 12px;
+      }
     }
   }
 }
