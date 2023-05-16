@@ -6,6 +6,7 @@ import { getStorage } from '../../storage/get.js';
 import { getProfile } from '../../api/profile.js';
 import { addParam } from '../../storage/add-param.js';
 import { removeParam } from '../../storage/remove-param.js';
+import { delList } from '../listeners/del-list-btn.js';
 
 export function addBidModalTemp(id) {
   addParam('id', id);
@@ -208,8 +209,10 @@ async function footerBtn() {
   if (user && user === addBidFooter.id) {
     addBidFooter.innerHTML = `<div class="d-flex justify-content-between">
                         <button type="button" class="btn btn-secondary text-success fs-5 fw-bold" style="width:125px;">Edit</button>
-                        <button type="button" class="btn btn-secondary text-success fs-5 fw-bold" style="width:125px;">Delete</button>
+                        <button type="button" class="btn btn-secondary text-success fs-5 fw-bold" style="width:125px;" id="del-list-btn">Delete</button>
    </div> `;
+
+    delList();
   } else {
     addBidFooter.innerHTML = `<div><form class="mt-5 needs-validation" id="add-bid-form" novalidate>
     <div class="mb-5 position-relative">
@@ -256,7 +259,7 @@ async function footerBtn() {
       //   console.log(userCredit);
       //   console.log(bidAmount);
       let dec = false;
-      if (inputValue.toString().includes('.', '-')) {
+      if (inputValue.toString().includes('.')) {
         dec = true;
       }
 
