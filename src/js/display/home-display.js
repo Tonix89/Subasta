@@ -47,7 +47,8 @@ export function homeDisplay() {
                 <div class="col-12 col-md-6 border rounded border-secondary bg-dark text-center bid-his-cont mb-3">
                     <h3 class="mt-3 fw-bold text-success">Bid History</h3>
                     <div class="bid-history-${id}"></div>
-                    <button type="button" class="btn btn-primary text-success fs-4 fw-bold w-75 mb-3" >View More</button>
+                    <button type="button" class="btn btn-primary text-success fs-4 fw-bold w-75 mb-3 view-more-btn" data-bs-toggle="modal"
+                    data-bs-target="#add-bid-modal" id="${id}">View More</button>
                 </div>
               </div>
            </div>

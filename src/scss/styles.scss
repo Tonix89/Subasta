@@ -34,7 +34,8 @@ body {
 .registration-form,
 .login-form,
 #change-avatar,
-#add-listing {
+#add-listing,
+#add-bid-form {
   .form-label {
     left: 10px;
     top: -20px;
@@ -66,7 +67,8 @@ body {
   }
 }
 
-#change-avatar {
+#change-avatar,
+#add-bid-form {
   .btn {
     width: 200px;
   }

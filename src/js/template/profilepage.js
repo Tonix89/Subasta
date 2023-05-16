@@ -25,6 +25,6 @@ export function profilePageTemp() {
       Winnings
     </button>
   </div>
-  <div id="listing-cards-cont" class="row row-cols-2 row-cols-md-3 g-2 mt-3 mb-3"></div>
+  <div id="listing-cards-cont" class="row row-cols-1 row-cols-md-3 g-2 mt-3 mb-3"></div>
   `;
 }

@@ -4,6 +4,7 @@ export const logout = () => {
   logoutBtn.addEventListener('click', () => {
     removeStorage('subUser');
     removeStorage('subToken');
+    removeStorage('subId');
 
     const delParams = window.location.href.split('?');
     if (delParams[1]) {
