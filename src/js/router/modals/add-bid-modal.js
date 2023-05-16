@@ -255,17 +255,40 @@ async function footerBtn() {
       //   console.log(inputValue);
       //   console.log(userCredit);
       //   console.log(bidAmount);
+      let dec = false;
+      if (inputValue.toString().includes('.', '-')) {
+        dec = true;
+      }
 
-      if (inputValue <= bidAmount && user && userCredit >= inputValue) {
+      if (inputValue <= bidAmount && user && userCredit >= inputValue && !dec) {
         bidInput.classList.add('is-invalid');
         addBidTooltip.innerHTML = 'Must be greater than the highest bid.';
         bidBtn.disabled = true;
-      } else if (inputValue > bidAmount && user && userCredit < inputValue) {
+      } else if (
+        inputValue > bidAmount &&
+        user &&
+        userCredit < inputValue &&
+        !dec
+      ) {
         bidInput.classList.add('is-invalid');
         addBidTooltip.innerHTML =
           "You don't have enough credits. Win more auction to gain more credits.";
         bidBtn.disabled = true;
-      } else if (inputValue > bidAmount && user && userCredit > inputValue) {
+      } else if (
+        inputValue > bidAmount &&
+        user &&
+        userCredit > inputValue &&
+        dec
+      ) {
+        bidInput.classList.add('is-invalid');
+        addBidTooltip.innerHTML = 'Bid amount must be whole number';
+        bidBtn.disabled = true;
+      } else if (
+        inputValue > bidAmount &&
+        user &&
+        userCredit > inputValue &&
+        !dec
+      ) {
         bidInput.classList.remove('is-invalid');
         bidBtn.disabled = false;
       } else {
