@@ -89,7 +89,7 @@ export function addBidModalTemp(id) {
       hideBidHistory(viewMoreBtn, viewLessBtn);
     });
 
-    footerBtn();
+    footerBtn(data);
   });
 }
 
@@ -196,7 +196,7 @@ function showBidHistory(viewMoreBtn, viewLessBtn) {
   }
 }
 
-async function footerBtn() {
+async function footerBtn(data) {
   const addBidFooter = document.querySelector('.add-bid-footer');
   const user = getStorage('subUser');
   const token = getStorage('subToken');
@@ -208,7 +208,8 @@ async function footerBtn() {
   }
   if (user && user === addBidFooter.id) {
     addBidFooter.innerHTML = `<div class="d-flex justify-content-between">
-                        <button type="button" class="btn btn-secondary text-success fs-5 fw-bold" style="width:125px;">Edit</button>
+                        <button type="button" class="btn btn-secondary text-success fs-5 fw-bold edit-list-btn" style="width:125px;" data-bs-toggle="modal"
+                        data-bs-target="#add-listing-modal" id="edit*${data.id}">Edit</button>
                         <button type="button" class="btn btn-secondary text-success fs-5 fw-bold" style="width:125px;" id="del-list-btn">Delete</button>
    </div> `;
 

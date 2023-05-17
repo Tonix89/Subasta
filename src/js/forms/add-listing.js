@@ -1,5 +1,6 @@
 import { url } from '../api/baseurl.js';
 import { postApi } from '../api/post.js';
+import { getParam } from '../storage/get-param.js';
 import { getStorage } from '../storage/get.js';
 export function addNewList(form) {
   //   console.log(form);
@@ -26,9 +27,18 @@ export function addNewList(form) {
   const dateEnded = setTime.toISOString();
 
   const token = getStorage('subToken');
-  const postUrl = url + '/auction/listings';
+  const id = getParam('id');
+  let postUrl;
+  let method;
+  if (id) {
+    postUrl = url + '/auction/listings/' + id;
+    method = 'PUT';
+  } else {
+    postUrl = url + '/auction/listings';
+    method = 'POST';
+  }
   const bodyData = {
-    method: 'POST',
+    method: method,
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token}`,

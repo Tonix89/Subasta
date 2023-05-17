@@ -6,7 +6,7 @@ export function profilePageTemp() {
   <button
     type="button"
     class="btn btn-secondary fw-bold fs-4 text-success border rounded p-1 mb-4" data-bs-toggle="modal"
-    data-bs-target="#add-listing-modal"
+    data-bs-target="#add-listing-modal" id="add-listing-modal-btn"
     style="width: 200px"
   >
     Add Listing

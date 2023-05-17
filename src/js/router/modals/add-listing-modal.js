@@ -1,4 +1,8 @@
+import { getParam } from '../../storage/get-param.js';
+import { removeParam } from '../../storage/remove-param.js';
 import { validateForm } from '../../ui/validate.js';
+import { getList } from '../../api/getListing.js';
+import { url } from '../../api/baseurl.js';
 
 export function addListingModalTemp() {
   const addListingModal = document.getElementById('add-listing-modal-dialog');
@@ -6,7 +10,7 @@ export function addListingModalTemp() {
     <div class="modal-header border-0 justify-content-end">
       <button
         type="button"
-        class="fw-bold text-info border rounded-circle border-info"
+        class="fw-bold text-info border rounded-circle border-info addlist-close-modal"
         data-bs-dismiss="modal"
         aria-label="Close"
       >
@@ -93,7 +97,7 @@ export function addListingModalTemp() {
                 <input
                         type="URL"
                         class="media form-control form-control-lg border border-3 border-primary p-3 pe-5"
-                        id="Media"
+                        id="media"
                         required />
                 <div class="invalid-tooltip">
                         Must be a valid URL and be sure that it is accessible in
@@ -107,7 +111,7 @@ export function addListingModalTemp() {
             <button type="button" class="btn btn-light text-info border border-info fw-bold fs-5 align-self-end ms-2" id="add-media">+</button>
         </div>
         <div class="d-flex flex-column">
-          <button
+          <button type="submit"
             class="btn align-self-end btn-lg fw-bold fs-5 align-self-center mt-3"
             id="add-listing-btn"
           >
@@ -117,6 +121,17 @@ export function addListingModalTemp() {
       </form>
     </div>
   </div>`;
+
+  const id = getParam('id');
+  //   console.log(id);
+  if (id) {
+    floodInput(id);
+  }
+
+  const closeModal = document.querySelector('.addlist-close-modal');
+  closeModal.addEventListener('click', () => {
+    removeParam('id');
+  });
 
   const today = new Date();
   const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
@@ -147,7 +162,7 @@ function newMedia() {
       newMediaInput.innerHTML = `
         <input
                 type="URL"
-                class="media form-control form-control-lg border border-3 border-primary p-3 pe-5"
+                class="media form-control form-control-lg border border-3 border-primary p-3 pe-5" id="media${i}"
                 required />
         <div class="invalid-tooltip">
                 Must be a valid URL and be sure that it is accessible in
@@ -165,5 +180,46 @@ function removeMedia() {
     if (i + 1 === mediaUrls.length) {
       mediaUrl.remove();
     }
+  });
+}
+
+function floodInput(id) {
+  const singleListUrl = url + '/auction/listings/' + id;
+  getList(singleListUrl).then((data) => {
+    //   console.log(data);
+
+    const formInput = document.querySelectorAll('input, textarea');
+    formInput.forEach((input, i) => {
+      // console.log(input.id);
+      const inputId = input.id;
+      if (i > 0) {
+        const getInput = document.getElementById(inputId);
+        //   console.log(getInput);
+        if (inputId === 'media') {
+          if (data[inputId].length === 0) {
+            getInput.value = '';
+          } else {
+            data[inputId].forEach((mediaInput, j) => {
+              getInput.value = mediaInput;
+              if (j > 0) {
+                newMedia();
+                const newMediaInput = document.getElementById(
+                  inputId + (j - 1)
+                );
+                newMediaInput.value = mediaInput;
+              }
+            });
+          }
+        } else if (inputId === 'date') {
+          const date = new Date(data.endsAt);
+          const day = String(date.getDate()).padStart(2, '0');
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const year = String(date.getFullYear());
+          getInput.value = `${year}-${month}-${day}`;
+        } else {
+          getInput.value = data[inputId];
+        }
+      }
+    });
   });
 }
