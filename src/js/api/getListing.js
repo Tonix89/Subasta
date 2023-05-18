@@ -13,7 +13,7 @@ export async function getList(url) {
       return resData;
     } else {
       // console.log(resData);
-      alert(resData.errors[0].message);
+      return resData.errors[0].message;
     }
   } catch (error) {
     alert(error);

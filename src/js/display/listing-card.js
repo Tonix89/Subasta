@@ -1,10 +1,53 @@
 import { getList } from '../api/getListing.js';
+import { getProfile } from '../api/profile.js';
 import { isoToDate } from '../functions/convert-date.js';
 import { getCountdown } from '../functions/count-down.js';
 import { getParam } from '../storage/get-param.js';
 import { getStorage } from '../storage/get.js';
+import { url } from '../api/baseurl.js';
 
 export function listDisplay(listUrl, listCardCont) {
+  const myWins = getParam('mywins');
+  if (myWins) {
+    myWinsCont(listCardCont);
+  } else {
+    myList(listUrl, listCardCont);
+  }
+}
+
+function myWinsCont(listCardCont) {
+  const user = getStorage('subUser');
+  const token = getStorage('subToken');
+  const newUrl = url + '/auction/profiles/' + user;
+  getProfile(newUrl, token).then((data) => {
+    // console.log(data);
+    let newData = [];
+    data.wins.forEach((win) => {
+      // console.log(win);
+      getList(url + '/auction/listings/' + win + '?_bids=true').then((res) => {
+        // console.log(res);
+        if (res !== 'No listing with such ID') {
+          newData.push(res);
+        }
+      });
+    });
+    setTimeout(() => {
+      if (data.wins.length > newData.length) {
+        alert(
+          `You have ${data.wins.length} wins. But ` +
+            (data.wins.length - newData.length) +
+            ' ' +
+            'listing was already been deleted.'
+        );
+      }
+      // console.log(newData[0]);
+      cardDisplay(newData, listCardCont);
+    }, 3000);
+  });
+}
+
+function myList(listUrl, listCardCont) {
+  const user = getStorage('subUser');
   getList(listUrl).then((data) => {
     // console.log(data);
     const param = getParam('filter');
@@ -18,7 +61,6 @@ export function listDisplay(listUrl, listCardCont) {
       });
     };
 
-    const user = getStorage('subUser');
     const filteredData = newArray(data, user);
 
     let dataArray;
@@ -102,7 +144,8 @@ function cardDisplay(data, listCardCont) {
         </div>`;
     });
     const isListing = getParam('listing');
-    if (isListing) {
+    const isMywin = getParam('mywins');
+    if (isListing || isMywin) {
       if (data.length === 0) {
         listCardCont.innerHTML = `<h1 class="w-100">You have no active bid yet. Browse list and start bidding.</h1>`;
         listCardCont.classList.add('d-flex', 'justify-content-center');
@@ -120,6 +163,11 @@ function cardDisplay(data, listCardCont) {
       if (data.length === 0) {
         listCardCont.innerHTML = `<h1 class="w-100">You have no listing yet.</h1>`;
         listCardCont.classList.add('d-flex', 'justify-content-center');
+      } else {
+        listCardCont.classList.replace('row-cols-md-1', 'row-cols-md-3');
+        listCardCont.classList.replace('row-cols-md-2', 'row-cols-md-3');
+        listCardCont.classList.remove('d-flex');
+        listCardCont.classList.remove('justify-content-center');
       }
     }
 

@@ -22,13 +22,13 @@ export function profilePageTemp() {
   <div class="container-fluid d-flex justify-content-around">
     <button
       type="button"
-      class="list-win btn btn-warning border border-primary fw-bold fs-4 text-success border rounded p-1"
+      class="list-win btn btn-warning border border-primary fw-bold fs-4 text-success border rounded p-1" id="my-list-btn"
     >
       Listing
     </button>
     <button
       type="button"
-      class="list-win btn btn-light border border-primary fw-bold fs-4 text-success border rounded p-1"
+      class="list-win btn btn-light border border-primary fw-bold fs-4 text-success border rounded p-1" id="my-win-btn"
     >
       Winnings
     </button>

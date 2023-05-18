@@ -216,6 +216,18 @@ function floodInput(id) {
           const month = String(date.getMonth() + 1).padStart(2, '0');
           const year = String(date.getFullYear());
           getInput.value = `${year}-${month}-${day}`;
+          getInput.setAttribute('readony', '');
+          getInput.setAttribute('data-bs-container', 'body');
+          getInput.setAttribute('data-bs-toggle', 'popover');
+          getInput.setAttribute('data-bs-placement', 'top');
+          getInput.setAttribute('data-bs-content', `You can't edit date.`);
+
+          const popoverTriggerList = document.querySelectorAll(
+            '[data-bs-toggle="popover"]'
+          );
+          [...popoverTriggerList].map(
+            (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+          );
         } else {
           getInput.value = data[inputId];
         }

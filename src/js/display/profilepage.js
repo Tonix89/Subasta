@@ -4,6 +4,9 @@ import { getStorage } from '../storage/get.js';
 import { url } from '../api/baseurl.js';
 import { secondaryLoader } from '../variables/loader.js';
 import { listDisplay } from './listing-card.js';
+import { removeParam } from '../storage/remove-param.js';
+import { addParam } from '../storage/add-param.js';
+import { getParam } from '../storage/get-param.js';
 
 export function profilePageDisplay() {
   profilePageTemp();
@@ -29,6 +32,33 @@ export function profilePageDisplay() {
     </div>`;
     const listUrl = url + '/auction/profiles/' + name + '/listings?_bids=true';
     const listCardCont = document.getElementById('listing-cards-cont');
+    const myListBtn = document.getElementById('my-list-btn');
+    const myWinBtn = document.getElementById('my-win-btn');
+
+    listCardCont.innerHTML = secondaryLoader;
+
+    const myWins = getParam('mywins');
+    if (myWins) {
+      myListBtn.classList.replace('btn-warning', 'btn-light');
+      myWinBtn.classList.replace('btn-light', 'btn-warning');
+    }
     listDisplay(listUrl, listCardCont);
+
+    myListBtn.addEventListener('click', () => {
+      listCardCont.innerHTML = secondaryLoader;
+      removeParam('mywins');
+      myListBtn.classList.replace('btn-light', 'btn-warning');
+      myWinBtn.classList.replace('btn-warning', 'btn-light');
+      listDisplay(listUrl, listCardCont);
+    });
+
+    myWinBtn.addEventListener('click', () => {
+      listCardCont.innerHTML = secondaryLoader;
+      myListBtn.classList.replace('btn-warning', 'btn-light');
+      myWinBtn.classList.replace('btn-light', 'btn-warning');
+      removeParam('mywins');
+      addParam('mywins', 'true');
+      listDisplay(listUrl, listCardCont);
+    });
   });
 }

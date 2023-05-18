@@ -80,6 +80,14 @@ body {
   }
 }
 
+.popover-body {
+  --bs-popover-body-color: #740414;
+  font-weight: bold;
+}
+.popover {
+  --bs-popover-border-color: #1afffd;
+}
+
 #listing-cards-cont,
 #listing-page-card-cont {
   max-width: -webkit-fill-available;
