@@ -20,9 +20,13 @@
     <header>
       <nav class="navbar navbar-expand-lg bg-primary">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html"
-            ><img src="assets/img/Logo.png" alt="Subasta logo"
-          /></a>
+          <button
+            type="button"
+            class="navbar-brand bg-transparent border border-0"
+            id="logo-nav-btn"
+          >
+            <img src="assets/img/Logo.png" alt="Subasta logo" />
+          </button>
           <form class="search d-flex" role="search">
             <input
               class="form-control border-secondary"
@@ -75,8 +79,8 @@
                 <li class="nav-item">
                   <button
                     class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
-                    aria-current="page"
-                    href="#"
+                    id="listing-nav-btn"
+                    data-bs-dismiss="offcanvas"
                   >
                     Listing
                   </button>
@@ -196,7 +200,13 @@
       <!--Profile Page-->
       <div
         id="profile-page"
-        class="d-none mt-3 d-flex flex-column align-items-center"
+        class="d-none mt-3 flex-column align-items-center"
+      ></div>
+
+      <!--Listing Page Template-->
+      <div
+        id="listing-page"
+        class="d-none mt-3 flex-column align-items-center"
       ></div>
     </main>
     <footer>

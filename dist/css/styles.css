@@ -10476,7 +10476,7 @@ fieldset:disabled #add-bid-form .login-btn .btn,
   --bs-tooltip-padding-y: 0.25rem;
   --bs-tooltip-margin: ;
   --bs-tooltip-font-size: 0.875rem;
-  --bs-tooltip-color: #fff;
+  --bs-tooltip-color: #740414;
   --bs-tooltip-bg: #000;
   --bs-tooltip-border-radius: 1.375rem;
   --bs-tooltip-opacity: 0.9;
@@ -16646,18 +16646,27 @@ body {
   background-image: none;
 }
 
-#listing-cards-cont {
+#listing-cards-cont,
+#listing-page-card-cont {
   max-width: -webkit-fill-available;
 }
-#listing-cards-cont .timer-icon {
+#listing-cards-cont .timer-icon,
+#listing-page-card-cont .timer-icon {
   width: 30px;
   height: 30px;
 }
-#listing-cards-cont .card-footer {
+#listing-cards-cont .card-footer,
+#listing-page-card-cont .card-footer {
   background-color: white;
 }
-#listing-cards-cont .card-footer .listing-viewMore-btn {
+#listing-cards-cont .card-footer .listing-viewMore-btn,
+#listing-page-card-cont .card-footer .listing-viewMore-btn {
   font-size: 18px;
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-text: var(--bs-primary);
 }
 
 main {
@@ -16698,18 +16707,25 @@ main {
   min-height: 200px;
 }
 
-#profile-page {
+#profile-page, #listing-page {
   width: 75vw;
 }
-#profile-page #profile-cont {
+#profile-page #profile-cont, #listing-page #profile-cont {
   width: 50vw;
 }
-#profile-page #profile-cont .avatar {
+#profile-page #profile-cont .avatar, #listing-page #profile-cont .avatar {
   width: 70px;
   height: 70px;
 }
-#profile-page .list-win {
+#profile-page .list-win, #listing-page .list-win {
   width: 200px;
+}
+
+#listing-page .dropdown-menu-dark {
+  --bs-dropdown-bg: #c8ffcb;
+}
+#listing-page .dropdown-menu-dark .dropdown-item.active {
+  background-color: #ffea06;
 }
 
 @media (max-width: 991.98px) {
@@ -16737,13 +16753,13 @@ main {
     width: 30px;
     height: 30px;
   }
-  #profile-page {
+  #profile-page, #listing-page {
     width: 95vw;
   }
-  #profile-page #profile-cont {
+  #profile-page #profile-cont, #listing-page #profile-cont {
     width: 100%;
   }
-  #profile-page .list-win {
+  #profile-page .list-win, #listing-page .list-win {
     width: 150px;
   }
   #listing-cards-cont .card-footer .listing-viewMore-btn {

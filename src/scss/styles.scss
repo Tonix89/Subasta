@@ -80,7 +80,8 @@ body {
   }
 }
 
-#listing-cards-cont {
+#listing-cards-cont,
+#listing-page-card-cont {
   max-width: -webkit-fill-available;
   .timer-icon {
     width: 30px;
@@ -92,6 +93,11 @@ body {
       font-size: 18px;
     }
   }
+}
+
+.custom-tooltip {
+  --bs-tooltip-bg: var(--bs-primary);
+  --bs-tooltip-text: var(--bs-primary);
 }
 
 main {
@@ -149,6 +155,16 @@ main {
   }
   .list-win {
     width: 200px;
+  }
+}
+
+#listing-page {
+  @extend #profile-page;
+  .dropdown-menu-dark {
+    --bs-dropdown-bg: #c8ffcb;
+    .dropdown-item.active {
+      background-color: $warning-color;
+    }
   }
 }
 

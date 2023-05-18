@@ -1,6 +1,14 @@
-import { profilePageCont } from '../variables/dom.js';
+import {
+  homePage,
+  profilePageCont,
+  listingPageCont,
+} from '../variables/dom.js';
 export function profilePageTemp() {
-  profilePageCont.classList.remove('d-none');
+  profilePageCont.classList.replace('d-none', 'd-flex');
+  listingPageCont.classList.replace('d-flex', 'd-none');
+  homePage.classList.add('d-none');
+  listingPageCont.innerHTML = '';
+  homePage.innerHTML = '';
   profilePageCont.innerHTML = `<div id="profile-cont" class="border border-primary rounded mb-4">
   </div>
   <button

@@ -3,6 +3,7 @@ import { url } from '../api/baseurl.js';
 import { postApi } from '../api/post.js';
 import { getParam } from '../storage/get-param.js';
 import { addBidModalTemp } from '../router/modals/add-bid-modal.js';
+import { listingPageDisplay } from '../display/listingpage.js';
 export async function goAddBid(form) {
   const id = getParam('id');
   const token = getStorage('subToken');
@@ -28,6 +29,10 @@ export async function goAddBid(form) {
     if (res) {
       alert('COngratulations! You are the highest bidder now.');
       addBidModalTemp(id);
+      const listing = getParam('listing');
+      if (listing) {
+        listingPageDisplay();
+      }
     }
   });
 }

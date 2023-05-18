@@ -1,7 +1,14 @@
-import { homePage } from '../variables/dom.js';
-import { profilePageCont } from '../variables/dom.js';
+import {
+  homePage,
+  profilePageCont,
+  listingPageCont,
+} from '../variables/dom.js';
 export function homePageTemp() {
-  profilePageCont.classList.add('d-none');
+  profilePageCont.classList.replace('d-flex', 'd-none');
+  listingPageCont.classList.replace('d-flex', 'd-none');
+  homePage.classList.remove('d-none');
+  profilePageCont.innerHTML = '';
+  listingPageCont.innerHTML = '';
   homePage.innerHTML = `<div id="listing-carousel" class="carousel slide" data-bs-ride="true">
   <div class="carousel-inner d-flex align-items-center"></div>
   <button

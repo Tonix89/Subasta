@@ -3,6 +3,7 @@ import { getUser } from './loggedin.js';
 import { logout } from './logout.js';
 import { homePage } from './homepage.js';
 import { profilePage } from './profile-page.js';
+import { listingPage } from './listing-page.js';
 
 export default () => {
   validateForm();
@@ -10,4 +11,5 @@ export default () => {
   logout();
   homePage();
   profilePage();
+  listingPage();
 };
