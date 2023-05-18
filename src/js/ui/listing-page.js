@@ -6,8 +6,9 @@ import { listingPageBtn, profilePageBtn } from '../variables/dom.js';
 import { delAllParams } from '../storage/all-param.js';
 export const listingPage = () => {
   const listing = getParam('listing');
+  const search = getParam('search');
   const name = getStorage('subUser');
-  if (name && listing === 'true') {
+  if ((name && listing === 'true') || search) {
     listingPageBtn.classList.replace('bg-white', 'bg-warning');
     listingPageDisplay();
   }

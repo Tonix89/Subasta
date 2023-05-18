@@ -7,10 +7,16 @@ import { getProfile } from '../../api/profile.js';
 import { addParam } from '../../storage/add-param.js';
 import { removeParam } from '../../storage/remove-param.js';
 import { delList } from '../listeners/del-list-btn.js';
+import { notloggedIn } from '../../functions/notloggedin.js';
 
 export function addBidModalTemp(id) {
   addParam('id', id);
   const addBidModal = document.getElementById('add-bid-modal-dialog');
+  const isLogin = getStorage('subToken');
+  if (!isLogin) {
+    notloggedIn(addBidModal);
+    return;
+  }
   const singleListUrl =
     url + '/auction/listings/' + id + '?_bids=true&_seller=true';
   getList(singleListUrl).then((data) => {

@@ -50,18 +50,41 @@ function myList(listUrl, listCardCont) {
   const user = getStorage('subUser');
   getList(listUrl).then((data) => {
     // console.log(data);
-    const param = getParam('filter');
+    if (!data) {
+      listCardCont.innerHTML = `<h1 class="w-100">You must login first in order to search for users.</h1>`;
+      listCardCont.classList.add('d-flex', 'justify-content-center');
+      return;
+    }
+    const filter = getParam('filter');
+    const searchFor = getParam('for');
+    let param;
+    let filteredData;
+    let searchData;
+    if (filter) {
+      param = filter;
+      const newArray = (data, user) => {
+        return data.filter((list) => {
+          return (
+            list.bids.length > 0 &&
+            list.bids.some((bid) => bid.bidderName === user)
+          );
+        });
+      };
 
-    const newArray = (data, user) => {
-      return data.filter((list) => {
-        return (
-          list.bids.length > 0 &&
-          list.bids.some((bid) => bid.bidderName === user)
-        );
-      });
-    };
+      filteredData = newArray(data, user);
+    } else if (searchFor) {
+      param = searchFor;
+      const search = getParam('search');
+      const newArray = (data, search) => {
+        return data.filter((list) => {
+          if (list.title === search) {
+            return list;
+          }
+        });
+      };
 
-    const filteredData = newArray(data, user);
+      searchData = newArray(data, search);
+    }
 
     let dataArray;
     switch (param) {
@@ -81,6 +104,9 @@ function myList(listUrl, listCardCont) {
         break;
       case 'onbid':
         dataArray = filteredData;
+        break;
+      case 'title':
+        dataArray = searchData;
         break;
       default:
         dataArray = data;

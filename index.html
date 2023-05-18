@@ -27,17 +27,35 @@
           >
             <img src="assets/img/Logo.png" alt="Subasta logo" />
           </button>
-          <form class="search d-flex" role="search">
-            <input
-              class="form-control border-secondary"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn search-icon p-0" type="submit">
-              <img src="assets/icon/search-icon.png" alt="search icon" />
-            </button>
-          </form>
+          <div class="search">
+            <form class="d-flex">
+              <input
+                class="form-control border-secondary text-success fw-bold"
+                placeholder="Search"
+                type="text"
+                id="search-input"
+                autocomplete="off"
+              />
+              <button class="btn search-icon p-0" type="submit">
+                <img
+                  src="assets/icon/search-icon.png"
+                  alt="search icon"
+                  id="search-btn"
+                />
+              </button>
+            </form>
+            <ul
+              class="dropdown-menu overflow-auto"
+              id="search-list"
+              style="max-height: 400px; min-width: 300px; z-index: 1000"
+            >
+              <li>
+                <h6 class="dropdown-header fw-bold text-success">
+                  Search Suggestion
+                </h6>
+              </li>
+            </ul>
+          </div>
           <button
             class="navbar-toggler border border-0"
             type="button"

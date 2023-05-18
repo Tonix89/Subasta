@@ -3,9 +3,16 @@ import { removeParam } from '../../storage/remove-param.js';
 import { validateForm } from '../../ui/validate.js';
 import { getList } from '../../api/getListing.js';
 import { url } from '../../api/baseurl.js';
+import { getStorage } from '../../storage/get.js';
+import { notloggedIn } from '../../functions/notloggedin.js';
 
 export function addListingModalTemp() {
   const addListingModal = document.getElementById('add-listing-modal-dialog');
+  const isLogin = getStorage('subToken');
+  if (!isLogin) {
+    notloggedIn(addListingModal);
+    return;
+  }
   addListingModal.innerHTML = `<div class="modal-content border-secondary">
     <div class="modal-header border-0 justify-content-end">
       <button
