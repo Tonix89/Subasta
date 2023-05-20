@@ -2,6 +2,7 @@ import { homeDisplay } from '../display/home-display.js';
 import { delAllParams } from '../storage/all-param.js';
 import { getParam } from '../storage/get-param.js';
 import {
+  aboutUsPageBtn,
   homePageBtn,
   listingPageBtn,
   profilePageBtn,
@@ -17,6 +18,7 @@ export const homePage = () => {
     delAllParams();
     listingPageBtn.classList.replace('bg-warning', 'bg-white');
     profilePageBtn.classList.replace('bg-warning', 'bg-white');
+    aboutUsPageBtn.classList.replace('bg-warning', 'bg-white');
     homeDisplay();
   });
 };

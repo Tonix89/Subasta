@@ -2,13 +2,16 @@ import {
   homePage,
   profilePageCont,
   listingPageCont,
+  aboutUsPageCont,
 } from '../variables/dom.js';
 export function listingPageTemp() {
   listingPageCont.classList.replace('d-none', 'd-flex');
   profilePageCont.classList.replace('d-flex', 'd-none');
+  aboutUsPageCont.classList.replace('d-flex', 'd-none');
   homePage.classList.add('d-none');
   profilePageCont.innerHTML = '';
   homePage.innerHTML = '';
+  aboutUsPageCont.innerHTML = '';
   listingPageCont.innerHTML = `
                 <button type="button" class="btn btn-secondary border rounded-pill fw-bold fs-3 text-success" style="width:250px;" data-bs-toggle="modal"
                 data-bs-target="#add-listing-modal">Add Listing</button>
