@@ -3,6 +3,7 @@ import { goLogin } from '../forms/login.js';
 import { goChangeAvatar } from '../forms/change-avatar.js';
 import { addNewList } from '../forms/add-listing.js';
 import { goAddBid } from '../forms/add-bid.js';
+import { aboutUsDisplay } from '../display/aboutuspage.js';
 
 export function validateForm() {
   (() => {
@@ -34,6 +35,14 @@ export function validateForm() {
                 break;
               case 'add-bid-form':
                 goAddBid(form);
+                break;
+              case 'about-us':
+                alert('Thank you for reaching us! We will contact you soon.');
+                aboutUsDisplay();
+                break;
+              case 'subscription':
+                alert('Thank you for subscribing to our newsletter.');
+                aboutUsDisplay();
                 break;
               default:
                 break;
