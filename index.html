@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Subasta</title>
+    <meta
+      name="description"
+      content="Subasta is an online auction house. Subasta is a from Cebuano word which means Auction.Cebuano is one one of the dialects in the Philipppines."
+    />
+    <link rel="stylesheet" href="dist/css/styles.css" />
+    <script
+      src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-primary">
+        <div class="container-fluid">
+          <button
+            type="button"
+            class="navbar-brand bg-transparent border border-0"
+            id="logo-nav-btn"
+          >
+            <img src="assets/img/Logo.png" alt="Subasta logo" />
+          </button>
+          <div class="search">
+            <form class="d-flex">
+              <input
+                class="form-control border-secondary text-success fw-bold"
+                placeholder="Search"
+                type="text"
+                id="search-input"
+                autocomplete="off"
+              />
+              <button class="btn search-icon p-0" type="submit">
+                <img
+                  src="assets/icon/search-icon.png"
+                  alt="search icon"
+                  id="search-btn"
+                />
+              </button>
+            </form>
+            <ul
+              class="dropdown-menu overflow-auto"
+              id="search-list"
+              style="max-height: 400px; min-width: 300px; z-index: 1000"
+            >
+              <li>
+                <h6 class="dropdown-header fw-bold text-success">
+                  Search Suggestion
+                </h6>
+              </li>
+            </ul>
+          </div>
+          <button
+            class="navbar-toggler border border-0"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <img src="assets/icon/navbar-icon.png" alt="nav icon" />
+          </button>
+          <div
+            class="offcanvas offcanvas-end rounded-start border border-info"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <div class="offcanvas-header justify-content-end">
+              <button
+                type="button"
+                class="fw-bold text-info border rounded-circle border-info"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              >
+                X
+              </button>
+            </div>
+            <div class="offcanvas-body">
+              <ul
+                class="navbar-nav nav-justified gap-2 justify-content-between flex-grow-1 pe-3 nav-pills ms-2 flex-lg-row-reverse"
+              >
+                <li class="nav-item d-none loggedin">
+                  <button
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    id="profile-nav-btn"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Profile
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    id="listing-nav-btn"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    Listing
+                  </button>
+                </li>
+                <li class="nav-item">
+                  <button
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    id="aboutus-btn"
+                    data-bs-dismiss="offcanvas"
+                  >
+                    About Us
+                  </button>
+                </li>
+                <li class="nav-item not-login">
+                  <button
+                    type="button"
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#login-modal"
+                  >
+                    Login
+                  </button>
+                </li>
+                <li class="nav-item not-login">
+                  <button
+                    type="button"
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    data-bs-toggle="modal"
+                    data-bs-target="#signup-modal"
+                  >
+                    Sign Up
+                  </button>
+                </li>
+                <li class="nav-item d-none loggedin">
+                  <button
+                    class="nav-link fw-bold fs-5 bg-white border border-secondary text-success"
+                    id="logout-btn"
+                    aria-current="page"
+                  >
+                    Logout
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="d-flex justify-content-center">
+      <!--Registration Modal-->
+      <div
+        class="modal fade"
+        id="signup-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="signup-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" id="signup-modal-dialog"></div>
+      </div>
+
+      <!--Login Modal-->
+      <div
+        class="modal fade"
+        id="login-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="login-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" id="login-modal-dialog"></div>
+      </div>
+
+      <!--Edit Avatar Modal-->
+      <div
+        class="modal fade"
+        id="edit-avatar-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="edit-avatar-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" id="edit-avatar-modal-dialog"></div>
+      </div>
+
+      <!--Add Listing Modal-->
+      <div
+        class="modal fade"
+        id="add-listing-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="add-listing-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" id="add-listing-modal-dialog"></div>
+      </div>
+
+      <!--Add Bid Modal-->
+      <div
+        class="modal fade"
+        id="add-bid-modal"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
+        tabindex="-1"
+        aria-labelledby="add-bid-modal"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" id="add-bid-modal-dialog"></div>
+      </div>
+
+      <!--Home Page Template-->
+      <div id="home-page" class="mt-3"></div>
+
+      <!--Profile Page-->
+      <div
+        id="profile-page"
+        class="d-none mt-3 flex-column align-items-center"
+      ></div>
+
+      <!--Listing Page Template-->
+      <div
+        id="listing-page"
+        class="d-none mt-3 flex-column align-items-center"
+      ></div>
+
+      <!--About Us Page Template-->
+      <div
+        id="aboutus-page"
+        class="d-none mt-3 flex-column align-items-center"
+      ></div>
+    </main>
+    <footer>
+      <div
+        class="container-fluid fw-bold text-success bg-primary text-center p-3"
+      >
+        All Rights Reserved.
+      </div>
+    </footer>
+  </body>
+</html>
