@@ -34,6 +34,11 @@ export function profilePageDisplay() {
     const listCardCont = document.getElementById('listing-cards-cont');
     const myListBtn = document.getElementById('my-list-btn');
     const myWinBtn = document.getElementById('my-win-btn');
+    const avatarSrc = document.getElementById('profilePage-avatar');
+
+    avatarSrc.addEventListener('error', () => {
+      avatarSrc.src = 'assets/icon/user.svg';
+    });
 
     listCardCont.innerHTML = secondaryLoader;
 

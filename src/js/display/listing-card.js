@@ -150,15 +150,15 @@ function cardDisplay(data, listCardCont) {
             <img src="${media[0]}" class="card-img-top" alt="${title}" style="height:350px;">
             <div class="card-body p-1">
               <div class="d-flex justify-content-between">
-                <h5 class="card-title">${title}</h5>
+                <h5 class="card-title fw-bold">${title}</h5>
                 <button type="button" class="btn cal-icon"  data-bs-toggle="tooltip" data-bs-placement="top"
                 data-bs-custom-class="custom-tooltip"
                 data-bs-title="${dateCreated}" ><img src="assets/icon/calendar_month_black_24dp.svg"  alt="calendar icon"/> </button>
               </div>
-              <p class="card-text">${description}</p>
+              <p class="card-text fw-semibold" style="text-indent:50px;">${description}</p>
               <div class="d-flex justify-content-between align-items-center mb-2">
                 <img src="assets/icon/timer.svg" alt="timer icon" class="timer-icon" />
-                <h6 class="mb-0 listing-timer-cont" id="${endsAt}*${id}"></h6>
+                <h6 class="mb-0 listing-timer-cont fw-bold" id="${endsAt}*${id}"></h6>
               </div>
               ${bidderName}
             </div>
@@ -169,32 +169,30 @@ function cardDisplay(data, listCardCont) {
           </div>
         </div>`;
     });
-    const isListing = getParam('listing');
     const isMywin = getParam('mywins');
-    if (isListing || isMywin) {
-      if (data.length === 0) {
-        listCardCont.innerHTML = `<h1 class="w-100">You have no active bid yet. Browse list and start bidding.</h1>`;
-        listCardCont.classList.add('d-flex', 'justify-content-center');
-      } else if (data.length === 1) {
-        listCardCont.classList.replace('row-cols-md-3', 'row-cols-md-1');
-      } else if (data.length === 2) {
-        listCardCont.classList.replace('row-cols-md-3', 'row-cols-md-2');
+    const isSearch = getParam('search');
+    const filter = getParam('filter');
+
+    if (data.length === 0) {
+      if (isMywin) {
+        listCardCont.innerHTML = `<h1 class="w-100">You have 0 win. Browse list and keep bidding.</h1>`;
+      } else if (isSearch) {
+        listCardCont.innerHTML = `<h1 class="w-100">There is 0 result for <span class="fw-bold text-success">" ${isSearch} "</span></h1>`;
+      } else if (filter === 'onbid') {
+        listCardCont.innerHTML = `<h1 class="w-100">You have no active bid. Browse list and start bidding.</h1>`;
       } else {
-        listCardCont.classList.replace('row-cols-md-1', 'row-cols-md-3');
-        listCardCont.classList.replace('row-cols-md-2', 'row-cols-md-3');
-        listCardCont.classList.remove('d-flex');
-        listCardCont.classList.remove('justify-content-center');
+        listCardCont.innerHTML = `<h1 class="w-100">You have no listing.</h1>`;
       }
+      listCardCont.classList.add('d-flex', 'justify-content-center');
+    } else if (data.length === 1) {
+      listCardCont.classList.replace('row-cols-md-3', 'row-cols-md-1');
+    } else if (data.length === 2) {
+      listCardCont.classList.replace('row-cols-md-3', 'row-cols-md-2');
     } else {
-      if (data.length === 0) {
-        listCardCont.innerHTML = `<h1 class="w-100">You have no listing yet.</h1>`;
-        listCardCont.classList.add('d-flex', 'justify-content-center');
-      } else {
-        listCardCont.classList.replace('row-cols-md-1', 'row-cols-md-3');
-        listCardCont.classList.replace('row-cols-md-2', 'row-cols-md-3');
-        listCardCont.classList.remove('d-flex');
-        listCardCont.classList.remove('justify-content-center');
-      }
+      listCardCont.classList.replace('row-cols-md-1', 'row-cols-md-3');
+      listCardCont.classList.replace('row-cols-md-2', 'row-cols-md-3');
+      listCardCont.classList.remove('d-flex');
+      listCardCont.classList.remove('justify-content-center');
     }
 
     const timerConts = document.querySelectorAll('.listing-timer-cont');

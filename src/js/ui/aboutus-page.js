@@ -1,4 +1,5 @@
 import { aboutUsDisplay } from '../display/aboutuspage.js';
+import { delAllParams } from '../storage/all-param.js';
 import {
   aboutUsPageBtn,
   listingPageBtn,
@@ -10,6 +11,7 @@ export const aboutUsPage = () => {
     listingPageBtn.classList.replace('bg-warning', 'bg-white');
     profilePageBtn.classList.replace('bg-warning', 'bg-white');
     aboutUsPageBtn.classList.replace('bg-white', 'bg-warning');
+    delAllParams();
     aboutUsDisplay();
   });
 };

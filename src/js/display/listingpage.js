@@ -21,15 +21,19 @@ export function listingPageDisplay() {
   const filters = document.querySelectorAll('.filter');
   const searchFor = getParam('for');
   if (searchFor) {
+    filterBtnGroup.classList.remove('bg-warning');
+    allBtn.classList.remove('btn-warning');
     getDisplay(searchFor);
   } else {
+    allBtn.classList.add('btn-warning');
+    filterBtnGroup.classList.remove('bg-warning');
     const filterParam = getParam('filter');
     getDisplay(filterParam);
   }
 
   allBtn.addEventListener('click', () => {
     delAllParams();
-    addParam('lisitng', 'true');
+    addParam('listing', 'true');
     allBtn.classList.add('btn-warning');
     filterBtnGroup.classList.remove('bg-warning');
     filters.forEach((filter) => {
@@ -43,7 +47,7 @@ export function listingPageDisplay() {
       filterBtnGroup.classList.add('bg-warning');
       allBtn.classList.remove('btn-warning');
       delAllParams();
-      addParam('lisitng', 'true');
+      addParam('listing', 'true');
       getFilter(filters, filter.innerHTML);
     });
   });

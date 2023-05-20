@@ -23,17 +23,17 @@ export function addBidModalTemp(id) {
     // console.log(data);
     const { bids, description, endsAt, media, seller, title } = data;
 
-    let userImg;
-    if (seller.avatar) {
-      userImg = `<img src="${seller.avatar}" alt="user avatar" class="border rounded" style="width:40px;height:40px;"/>`;
-    } else {
-      userImg = `<img src="assets/icon/user.svg" alt="user icon"/>`;
-    }
+    // let userImg;
+    // if (seller.avatar) {
+    //   userImg = `<img src="${seller.avatar}" alt="user avatar" class="border rounded" style="width:40px;height:40px;"/>`;
+    // } else {
+    //   userImg = `<img src="assets/icon/user.svg" alt="user icon"/>`;
+    // }
 
     addBidModal.innerHTML = `<div class="modal-content border-secondary">
     <div class="modal-header border-0 justify-content-between">
       <div class="d-flex align-items-center gap-1">
-        ${userImg}
+        <img src="${seller.avatar}" id="seller-avatar" alt="user avatar" class="border rounded" style="width:40px;height:40px;"/>
         <h3 class="m-0">${seller.name}</h3>
       </div>
       <button
@@ -48,7 +48,7 @@ export function addBidModalTemp(id) {
     <div class="modal-body add-bid-modal-body">
         <div id="list-media-cont"></div>
         <h3>${title}</h3>
-        <p style="text-indent: 50px;">${description}</p>
+        <p class="fw-semibold" style="text-indent: 50px;">${description}</p>
         <div class="d-flex justify-content-between align-items-center mb-2">
                 <img src="assets/icon/timer.svg" alt="timer icon" style="width:40px;" />
                 <h3 class="mb-0 add-bid-timer-cont"></h3>
@@ -64,6 +64,12 @@ export function addBidModalTemp(id) {
         <div class="add-bid-footer" id="${seller.name}"></div>
     </div>
   </div>`;
+
+    const avatarSrc = document.getElementById('seller-avatar');
+
+    avatarSrc.addEventListener('error', () => {
+      avatarSrc.src = 'assets/icon/user.svg';
+    });
 
     const closeModal = document.querySelector('.close-modal');
     closeModal.addEventListener('click', () => {
@@ -121,10 +127,16 @@ function mediaCarousel(media, mediaCont, title) {
       if (i === 0) {
         carouselCont.innerHTML += `<div class="carousel-item active">
         <img src="${img}" class="d-block w-100" alt="${title}">
+        <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-success">${i + 1}/${media.length}</h5>
+        </div>
       </div>`;
       } else {
         carouselCont.innerHTML += `<div class="carousel-item">
         <img src="${img}" class="d-block w-100" alt="${title}">
+        <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-success">${i + 1}/${media.length}</h5>
+        </div>
       </div>`;
       }
     });
