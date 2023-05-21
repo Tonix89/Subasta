@@ -4,7 +4,7 @@
 # Subasta
 Subasta is an online auction house. This is my semester project 2 as a Front-end development student at Noroff.
 
-## What is does
+## What it does
  - Can register a user.
  - Can login a user.
  - Can logout a user.
