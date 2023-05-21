@@ -126,19 +126,25 @@ function mediaCarousel(media, mediaCont, title) {
       //   console.log(img, i);
       if (i === 0) {
         carouselCont.innerHTML += `<div class="carousel-item active">
-        <img src="${img}" class="d-block w-100" alt="${title}">
+        <img src="${img}" class="d-block w-100 carousel-img" alt="${title}">
         <div class="carousel-caption d-none d-md-block">
             <h5 class="text-success">${i + 1}/${media.length}</h5>
         </div>
       </div>`;
       } else {
         carouselCont.innerHTML += `<div class="carousel-item">
-        <img src="${img}" class="d-block w-100" alt="${title}">
+        <img src="${img}" class="d-block w-100 carousel-img" alt="${title}">
         <div class="carousel-caption d-none d-md-block">
             <h5 class="text-success">${i + 1}/${media.length}</h5>
         </div>
       </div>`;
       }
+    });
+    const carouselImgs = document.querySelectorAll('.carousel-img');
+    carouselImgs.forEach((carImg) => {
+      carImg.addEventListener('error', () => {
+        carImg.src = 'assets/img/No_Image_Available.jpg';
+      });
     });
   } else {
     mediaCont.innerHTML = `<img src="assets/img/No_Image_Available.jpg" alt="no media available image" class="w-100"/>`;
