@@ -28,4 +28,5 @@ Subasta is an online auction house. This is my semester project 2 as a Front-end
 
   1. Clone this repo: ```https://github.com/Tonix89/Subasta.git```.
   2. Install all dependencies ```npm i```.
-  3. Run command ```npm start``` to start development server.
+  3. Run command ```npm run build``` to compile scss file.
+  4. Run command ```npm run watch``` to auto compile scss file when there is changes made.
