@@ -8,6 +8,7 @@ export function searchBar() {
   const searchBtn = document.getElementById('search-btn');
   const searchInput = document.getElementById('search-input');
   const searchList = document.getElementById('search-list');
+  const searchForm = document.getElementById('search-form');
 
   const listUrl = url + '/auction/listings' + '?_active=true&_seller=true';
   const searchArrays = [];
@@ -63,12 +64,41 @@ export function searchBar() {
       });
     });
   });
-  searchBtn.addEventListener('click', (e) => {
+
+  searchForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    // console.log(searchInput.value);
+    const searchValue = searchInput.value;
+    if (!searchValue) {
+      return;
+    }
+
     delAllParams();
 
+    if (searchValue[0] === '@') {
+      addParam('search', searchValue.slice(1));
+      addParam('for', 'name');
+    } else if (searchValue[0] === '#') {
+      addParam('search', searchValue.slice(1));
+      addParam('for', 'tag');
+    } else {
+      addParam('search', searchValue);
+      addParam('for', 'title');
+    }
+
+    addParam('listing', 'true');
+
+    listingPage();
+  });
+  searchBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+
     const searchValue = searchInput.value;
+    if (!searchValue) {
+      return;
+    }
+
+    delAllParams();
+
     if (searchValue[0] === '@') {
       addParam('search', searchValue.slice(1));
       addParam('for', 'name');
