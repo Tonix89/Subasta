@@ -40,14 +40,16 @@ Subasta is an online auction house. A registered user can post an item for sale 
       ```
       
  ### Running
-   1. Run this command to compile the scss file:
+  1. Run this command to compile the scss file:
+  
+     ```bash
+     npm run build
+     ```
+  
+  2.  Run this command to auto-compile the scss file when there are changes made:
       ```bash
-      npm run build
+      npm run watch
       ```
-   2.  Run this command to auto-compile the scss file when there are changes made:
-      ```bash
-       npm run watch
-       ```
 
 ## Contributing
 If you wish to contribute to this project, please follow this guidelines:
@@ -61,5 +63,7 @@ If you wish to contribute to this project, please follow this guidelines:
 
 ## Contact
 If you have any question or suggestion, please do not hesitate to contact me here:
+
 [LinkedIn](www.linkedin.com/in/antonio-arabejo-a22524152)
+
 [Facebook](https://www.facebook.com/tonixzz/)
