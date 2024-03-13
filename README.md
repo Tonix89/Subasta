@@ -25,7 +25,7 @@ Subasta is an online auction house. A registered user can post an item for sale 
  - JavaScript ES6
  - [Bootstrap@5.2.3](https://getbootstrap.com/)
  - [Sass](https://sass-lang.com/)
- - [Noroff API](https://docs.noroff.dev/auctionhouse-endpoints/authentication)
+ - Noroff API
 
 ## Getting Started
 
@@ -66,4 +66,4 @@ If you have any question or suggestion, please do not hesitate to contact me her
 
 [LinkedIn](www.linkedin.com/in/antonio-arabejo-a22524152)
 
-[Facebook](https://www.facebook.com/tonixzz/)
+[Portfolio](https://tonix.no/)
